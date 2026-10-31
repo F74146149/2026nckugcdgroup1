@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: ac082c3dd2a9d124ea9a5be1b2daa384
+  productGUID: 68b1bdc3063a1b24b84445f8bce0d2aa
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 2026nckugcdgroup1
+  productName: Group Project
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -609,14 +609,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 2026nckugcdgroup1
+  metroPackageName: Group Project
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 2026nckugcdgroup1
+  metroApplicationDescription: Group Project
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -685,13 +685,13 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7f81df35-47bb-48a4-9df9-71d7eb938a0a
+  cloudProjectId: d9c96ca7-6983-4233-bb34-691e78c5a628
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 2026nckugcdgroup1 2026-10-30_20-35-18
-  organizationId: minecraftcatnocat
+  projectName: Group Project
+  organizationId: newredpot2007
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
