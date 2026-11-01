@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\UnityProject\\2026nckugcdgroup1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\guncontorller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\guncontorller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\skillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\guncontorller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\guncontorller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\projectilcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\projectilcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,12 +27,12 @@
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\swordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\unityproject\\2026nckugcdgroup1\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,37 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GunContorller.cs",
-              "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\GunContorller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GunContorller.cs",
-              "ToolTip": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\GunContorller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GunContorller.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAADwvycAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T02:23:59.07Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SwordController.cs",
-              "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\SwordController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SwordController.cs",
-              "ToolTip": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\SwordController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SwordController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA7wCgAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T02:22:02.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "EnemyController.cs",
               "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\EnemyController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyController.cs",
@@ -76,12 +54,11 @@
               "RelativeToolTip": "Assets\\Scripts\\EnemyController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAASwBgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T01:09:48.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T01:09:48.739Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "WeaponHitBox.cs",
               "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\WeaponHitBox.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WeaponHitBox.cs",
@@ -89,8 +66,7 @@
               "RelativeToolTip": "Assets\\Scripts\\WeaponHitBox.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T01:38:30.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T01:38:30.5Z"
             },
             {
               "$type": "Document",
@@ -102,21 +78,44 @@
               "RelativeToolTip": "Assets\\Scripts\\ProjectilContoller.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAgwCEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T05:15:11.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T05:15:11.633Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SkillController.cs",
               "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\SkillController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SkillController.cs",
               "ToolTip": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\SkillController.cs",
               "RelativeToolTip": "Assets\\Scripts\\SkillController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAlwB4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wAoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-01T01:09:01.086Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GunContorller.cs",
+              "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\GunContorller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GunContorller.cs",
+              "ToolTip": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\GunContorller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GunContorller.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAawAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T14:24:43.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SwordController.cs",
+              "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\SwordController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SwordController.cs",
+              "ToolTip": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\SwordController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SwordController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wCgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T02:22:02.314Z"
             },
             {
               "$type": "Document",
@@ -126,10 +125,22 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T14:51:09.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "C:\\UnityProject\\2026nckugcdgroup1\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAD4vwwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T01:09:27.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T01:09:27.265Z"
             }
           ]
         }

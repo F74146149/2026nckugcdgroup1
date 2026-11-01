@@ -1,22 +1,22 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh" at "2026-10-31T13:10:55.1748777Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh" at "2026-11-01T14:20:19.1578384Z"
 Built from '6000.3/staging' branch; Version is '6000.3.23f1 (09d2ecc7fb28) revision 643820'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Core' Language: 'zh' Physical Memory: 32316 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-10-31T13:10:55Z
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26124, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+Date: 2026-11-01T14:20:19Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 10268, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              d642e5ed367d481782d4f5a8d8e7c24b
-  Correlation Id:          7a67f4cd2734f71e7c1e344392bfe3c6
-  External correlation Id: 4982240984626246116
+  Session Id:              5c295e42d80c4394897092c54f6bf0db
+  Correlation Id:          525ae3c01943e911927ee85942b51846
+  External correlation Id: 280354992151185060
   Machine Id:              dtD4xlpkob+sEQdHsyBQ6XCV0KE=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-guosh" (connect: 0.00s, validation: 0.00s, handshake: 0.16s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh-notifications" at "2026-10-31T13:10:55.342099Z"
-[Licensing::Module] Licensing Background thread has ended after 0.17s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-guosh" (connect: 0.01s, validation: 0.04s, handshake: 0.14s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh-notifications" at "2026-11-01T14:20:19.3540032Z"
+[Licensing::Module] Licensing Background thread has ended after 0.20s
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.23f1\Editor\Unity.exe
@@ -30,9 +30,9 @@ C:/UnityProject/2026nckugcdgroup1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-60387
+54394
 -parentPid
-20536
+23084
 -analyticsCloudUserId
 33264159680417
 -analyticsCloudProjectId
@@ -93,12 +93,12 @@ C:/UnityProject/2026nckugcdgroup1
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [25216]  Target information:
+Player connection [16988]  Target information:
 
-Player connection [25216]  * "[IP] 140.116.131.35 [Port] 0 [Flags] 2 [Guid] 4006200167 [EditorId] 4006200167 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-VS1PDTRU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [16988]  * "[IP] 140.116.131.35 [Port] 0 [Flags] 2 [Guid] 4153601361 [EditorId] 4153601361 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-VS1PDTRU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [25216] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [25216] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [16988] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [16988] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 4
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -110,7 +110,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 5.47 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 8.66 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.23f1 (09d2ecc7fb28)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/Resources/UnitySubsystems
@@ -129,12 +129,12 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56908
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.026003 seconds.
-- Loaded All Assemblies, in  0.912 seconds
+Registered in 0.002702 seconds.
+- Loaded All Assemblies, in  0.659 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -142,35 +142,35 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.027 seconds
-Domain Reload Profiling: 1927ms
-	BeginReloadAssembly (314ms)
+- Finished resetting the current domain, in  0.687 seconds
+Domain Reload Profiling: 1341ms
+	BeginReloadAssembly (227ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (80ms)
-	RebuildNativeTypeToScriptingClass (38ms)
-	initialDomainReloadingComplete (114ms)
-	LoadAllAssembliesAndSetupDomain (354ms)
-		LoadAssemblies (307ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (79ms)
+	LoadAllAssembliesAndSetupDomain (276ms)
+		LoadAssemblies (215ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (349ms)
-			TypeCache.Refresh (345ms)
-				TypeCache.ScanAssembly (318ms)
+		AnalyzeDomain (272ms)
+			TypeCache.Refresh (267ms)
+				TypeCache.ScanAssembly (243ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (1027ms)
+	FinalizeReload (688ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (932ms)
+		SetupLoadedEditorAssemblies (615ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (239ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (219ms)
-			ProcessInitializeOnLoadAttributes (358ms)
-			ProcessInitializeOnLoadMethodAttributes (106ms)
+			InitializePlatformSupportModulesInManaged (133ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (236ms)
+			ProcessInitializeOnLoadMethodAttributes (97ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -181,501 +181,74 @@ Domain Reload Profiling: 1927ms
   Product: Unity Personal Version
   Type: Assigned
   Expiration: Unlimited
+Curl error 3: URL rejected: Malformed input to a URL function
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.307 seconds
-Refreshing native plugins compatible for Editor in 4.21 ms, found 5 plugins.
+- Loaded All Assemblies, in  1.636 seconds
+Refreshing native plugins compatible for Editor in 3.40 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 33.15 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 6.93 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.457 seconds
-Domain Reload Profiling: 4747ms
-	BeginReloadAssembly (538ms)
+- Finished resetting the current domain, in  1.347 seconds
+Domain Reload Profiling: 2969ms
+	BeginReloadAssembly (311ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (9ms)
+		DisableScriptedObjects (12ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (131ms)
-	RebuildCommonClasses (92ms)
-	RebuildNativeTypeToScriptingClass (25ms)
-	initialDomainReloadingComplete (116ms)
-	LoadAllAssembliesAndSetupDomain (1517ms)
-		LoadAssemblies (1065ms)
+		CreateAndSetChildDomain (47ms)
+	RebuildCommonClasses (62ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (90ms)
+	LoadAllAssembliesAndSetupDomain (1137ms)
+		LoadAssemblies (785ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (769ms)
-			TypeCache.Refresh (593ms)
-				TypeCache.ScanAssembly (555ms)
-			BuildScriptInfoCaches (154ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (2458ms)
+		AnalyzeDomain (527ms)
+			TypeCache.Refresh (379ms)
+				TypeCache.ScanAssembly (350ms)
+			BuildScriptInfoCaches (130ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1349ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1925ms)
+		SetupLoadedEditorAssemblies (1093ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (18ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (294ms)
-			ProcessInitializeOnLoadAttributes (1017ms)
-			ProcessInitializeOnLoadMethodAttributes (532ms)
-			AfterProcessingInitializeOnLoad (56ms)
+			InitializePlatformSupportModulesInManaged (19ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (239ms)
+			ProcessInitializeOnLoadAttributes (585ms)
+			ProcessInitializeOnLoadMethodAttributes (231ms)
+			AfterProcessingInitializeOnLoad (10ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (44ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 18.67 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 3.29 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7428 unused Assets / (4.1 MB). Loaded Objects now: 8246.
-Memory consumption went from 169.3 MB to 165.2 MB.
-Total: 71.766100 ms (FindLiveObjects: 9.999200 ms CreateObjectMapping: 10.236800 ms MarkObjects: 35.854600 ms  DeleteObjects: 15.672800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 27691.751446 seconds.
-  path: Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/math.hlsl
-  artifactKey: Guid(8a988affc98dd434aadd71fe6be1061f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/math.hlsl using Guid(8a988affc98dd434aadd71fe6be1061f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a68bb6cecf6f43c1c794b3e24d594486') in 0.440099 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/intersect_structures.hlsl
-  artifactKey: Guid(f20cb86c2d6c414d9ff78df5fc04cd1d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/intersect_structures.hlsl using Guid(f20cb86c2d6c414d9ff78df5fc04cd1d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dee283cf3dca2d75e2fb2e1426a96d01') in 0.0508975 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Packages/com.unity.test-framework/CHANGELOG.md
-  artifactKey: Guid(d691174143fd3774ba63d7c493633b99) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/CHANGELOG.md using Guid(d691174143fd3774ba63d7c493633b99) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '259a868164745ade1afaa8540354f520') in 0.0482132 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000065 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/UnityEngine.TestRunner.asmdef
-  artifactKey: Guid(27619889b8ba8c24980f49ee34dbb44a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/UnityEngine.TestRunner.asmdef using Guid(27619889b8ba8c24980f49ee34dbb44a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bf8faf75f5a255163dc5e4c73de2eab0') in 0.0539204 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000059 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/RequireApiProfileAttribute.cs
-  artifactKey: Guid(a667f6654ad7a9548b8c8e68b51c8895) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/RequireApiProfileAttribute.cs using Guid(a667f6654ad7a9548b8c8e68b51c8895) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cf2fd78e5f0ee7fe80f2dbdaffd8bd20') in 0.1838573 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/bvh2il.hlsl
-  artifactKey: Guid(4541f1bb75b10ac4597809e3016f3026) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/bvh2il.hlsl using Guid(4541f1bb75b10ac4597809e3016f3026) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7f94d5f953c292264ec7c0e59dc2959f') in 0.0618838 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/TestRunProgress.cs
-  artifactKey: Guid(8a06b6fbaa6f4191aa47b7e31242f061) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/TestRunProgress.cs using Guid(8a06b6fbaa6f4191aa47b7e31242f061) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '10020ffa47ce7c134f6570cfa87b498c') in 0.0491885 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000071 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/CallbacksDelegator.cs
-  artifactKey: Guid(0de03ebd74e2b474fa23d05ab42d0cd8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/CallbacksDelegator.cs using Guid(0de03ebd74e2b474fa23d05ab42d0cd8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1c5d1c251cf8b652972cf3a6bccb34cc') in 0.0463242 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineParser/ICommandLineOption.cs
-  artifactKey: Guid(f445ca0c614a846449fcd8ae648c24e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineParser/ICommandLineOption.cs using Guid(f445ca0c614a846449fcd8ae648c24e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1e2fde43dc8aafc7fabaefab7391adb2') in 0.0575463 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/RunData.cs
-  artifactKey: Guid(3f8c1075884df0249b80e23a0598f9c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/RunData.cs using Guid(3f8c1075884df0249b80e23a0598f9c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4beee60af38dc1b680d5add3188578a9') in 0.034777 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineParser/CommandLineOption.cs
-  artifactKey: Guid(a3529368f4cd0424a89aa51080a16b06) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineParser/CommandLineOption.cs using Guid(a3529368f4cd0424a89aa51080a16b06) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '03bfed964dd2e07886491b1dadb71dc0') in 0.0468422 seconds
 Curl error 3: URL rejected: Malformed input to a URL function
+Unloading 7431 unused Assets / (4.5 MB). Loaded Objects now: 8249.
+Memory consumption went from 172.9 MB to 168.3 MB.
+Total: 10.632800 ms (FindLiveObjects: 0.834400 ms CreateObjectMapping: 0.790400 ms MarkObjects: 6.225600 ms  DeleteObjects: 2.780600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 118249.260514 seconds.
+  path: Assets/Scripts/ProjectilContoller.cs
+  artifactKey: Guid(a0f8911fe67a4c3449947dcddcbc8219) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/ProjectilContoller.cs using Guid(a0f8911fe67a4c3449947dcddcbc8219) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6fc26b490770193a5b3a0324277b44e1') in 0.1364266 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.003155 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/TestMode.cs
-  artifactKey: Guid(cad095eccea17b741bc4cd264e7441cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/TestMode.cs using Guid(cad095eccea17b741bc4cd264e7441cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '49f12a1ad7b1eaa48679ffaaa315614c') in 0.0517735 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/transform.hlsl
-  artifactKey: Guid(7b4dd253adea58d49a8347c5bcc08904) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/RadeonRays/kernels/transform.hlsl using Guid(7b4dd253adea58d49a8347c5bcc08904) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1f648027e7da718dd57c00cc1eb61042') in 0.0501938 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000059 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/ITestResultAdaptor.cs
-  artifactKey: Guid(4f90cfe4bf5cfb44f84a5b11387f2a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/ITestResultAdaptor.cs using Guid(4f90cfe4bf5cfb44f84a5b11387f2a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7c00fe2d60ab31e66e7f5927ed0e79a5') in 0.0321426 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/Executer.cs
-  artifactKey: Guid(083c6a3a5426382449369ddc12b691d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/Executer.cs using Guid(083c6a3a5426382449369ddc12b691d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9a16fe7049284096174a63645ce702aa') in 0.0469816 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/GuiHelper.cs
-  artifactKey: Guid(d0138170d24533e47b8e6c250c6d7fbc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/GuiHelper.cs using Guid(d0138170d24533e47b8e6c250c6d7fbc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9d434a504155c1e9c5ba77620afd5f53') in 0.0553196 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000080 seconds.
-  path: Packages/com.unity.render-pipelines.core/Tests/Editor/ShaderStripping/ShaderStrippingTests.cs
-  artifactKey: Guid(313a5f1eb564f37449f028ba1a9dbbea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Tests/Editor/ShaderStripping/ShaderStrippingTests.cs using Guid(313a5f1eb564f37449f028ba1a9dbbea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6a203cfa33572f641b3b33c069835937') in 0.0445608 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/IGuiHelper.cs
-  artifactKey: Guid(fd57cf917f61bbb42b8f030436426ddd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/IGuiHelper.cs using Guid(fd57cf917f61bbb42b8f030436426ddd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6f1174de5c2fe8ec61e954986d9a6842') in 0.0271593 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/ExecutionSettings.cs
-  artifactKey: Guid(c3a75354f6ceac94ca15ca9d96593290) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/ExecutionSettings.cs using Guid(c3a75354f6ceac94ca15ca9d96593290) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'aa31b3128768efafbcd767aaf3a63836') in 0.037431 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002402 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/RemotePlayerTestController.cs
-  artifactKey: Guid(7d36034e63ad8254b9b2f55280fcc040) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/RemotePlayerTestController.cs using Guid(7d36034e63ad8254b9b2f55280fcc040) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3eec56981d4f037c3870a05828982679') in 0.0362273 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestRunnerResult.cs
-  artifactKey: Guid(a04a45bbed9e1714f9902fc9443669b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestRunnerResult.cs using Guid(a04a45bbed9e1714f9902fc9443669b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0bc0f718f396c5bf3f1a31b9725a9e47') in 0.0383743 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestBuildAssemblyFilter.cs
-  artifactKey: Guid(3411e19edd44cfd46b548b058c3bc36c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestBuildAssemblyFilter.cs using Guid(3411e19edd44cfd46b548b058c3bc36c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'de7cb211c2b009b8df31f2c86cf21b6b') in 0.0309028 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/TestRunnerApi.cs
-  artifactKey: Guid(68993ba529ae04440916cb7c23bf3279) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/TestRunnerApi.cs using Guid(68993ba529ae04440916cb7c23bf3279) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '02d379d6de7e5548c002ccb25b78e76f') in 0.0325592 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000102 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/WaitForPlayerRunTask.cs
-  artifactKey: Guid(241a47157da9420aaafa8cda2afd41a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/WaitForPlayerRunTask.cs using Guid(241a47157da9420aaafa8cda2afd41a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '24192c9c70d25b1d2dd98d61293b2dfd') in 0.0314799 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/IUtpLogger.cs
-  artifactKey: Guid(9014630255533ed42915965b4065cde8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/IUtpLogger.cs using Guid(9014630255533ed42915965b4065cde8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a83b71bd2ae19c972d29435d0d3ff723') in 0.0433888 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000066 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/Assertions/ConstraintsExtensions.cs
-  artifactKey: Guid(68a48d1900320ed458e118415857faf6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Assertions/ConstraintsExtensions.cs using Guid(68a48d1900320ed458e118415857faf6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '99c98d92af27d18d5c0b745b2f2d908f') in 0.0238302 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/TestRunData.cs
-  artifactKey: Guid(0fc9f45e5db884c07b28ac7207622a4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/TestRunData.cs using Guid(0fc9f45e5db884c07b28ac7207622a4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74c577f466d5b0aa1219895e6847d5e2') in 0.0230864 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/IUtpMessageReporter.cs
-  artifactKey: Guid(952b3dc7b47846947b37c8d3ae46579a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/IUtpMessageReporter.cs using Guid(952b3dc7b47846947b37c8d3ae46579a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b73a78e6f85ac65afd086b3282337784') in 0.0307487 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000069 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/EditModeLauncherContextSettings.cs
-  artifactKey: Guid(a582090813554df479fb9ca03e9857d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/EditModeLauncherContextSettings.cs using Guid(a582090813554df479fb9ca03e9857d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1675fa35825383425e310ff243f5662c') in 0.0421494 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/RuntimeTestLauncherBase.cs
-  artifactKey: Guid(0efb23ecb373b6d4bbe5217485785138) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/RuntimeTestLauncherBase.cs using Guid(0efb23ecb373b6d4bbe5217485785138) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a462f0b8983dd56f927c0631064d8850') in 0.0267523 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/BLASPositionsPool.cs
-  artifactKey: Guid(e633faaa7fc13ca42afbbd3359354b1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Runtime/UnifiedRayTracing/Compute/BLASPositionsPool.cs using Guid(e633faaa7fc13ca42afbbd3359354b1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '275d4cdf914bf385eca5de61478f93bb') in 0.0378292 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Packages/com.unity.render-pipelines.core/Editor/Lighting/Icons/LightUnitIcons/d_MoonlessNight@2x.png
-  artifactKey: Guid(d56ac7ee03f65c7408f8f3d5aeecdb86) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Editor/Lighting/Icons/LightUnitIcons/d_MoonlessNight@2x.png using Guid(d56ac7ee03f65c7408f8f3d5aeecdb86) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd39c3be09af522abef21afbf147a7b7a') in 0.2951371 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/DebugShapes.cs
-  artifactKey: Guid(a164ae4d75dc0074b966a2efdf0a5700) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/DebugShapes.cs using Guid(a164ae4d75dc0074b966a2efdf0a5700) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3f1574cc6482c95dbad91f957f1ca00d') in 0.040023 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000067 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/Vector3ComparerWithEqualsOperator.cs
-  artifactKey: Guid(5b994928117e3db418da69c821da7e19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/Vector3ComparerWithEqualsOperator.cs using Guid(5b994928117e3db418da69c821da7e19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ccaa16be9620530f2a0c3e9dcdf93475') in 0.0521796 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/TestData.cs
-  artifactKey: Guid(72ae18093c05147e4a680b41d4cd9e6f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/TestData.cs using Guid(72ae18093c05147e4a680b41d4cd9e6f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a16b91710238bf5689693aeefe78b1fd') in 0.0544276 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000066 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/Utils.cs
-  artifactKey: Guid(9502550ba4785e3499d6c9251fa2114b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/Utils.cs using Guid(9502550ba4785e3499d6c9251fa2114b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b50d11e4738c6b3d28c8324366715598') in 0.0390161 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/Assertions/Is.cs
-  artifactKey: Guid(6d5833966abeadb429de247e4316eef4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Assertions/Is.cs using Guid(6d5833966abeadb429de247e4316eef4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '38e9777314b94d47094da09063019ad4') in 0.0395677 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000090 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/IPostBuildCleanup.cs
-  artifactKey: Guid(ff67c526455160f4690a44f74dee4cbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/IPostBuildCleanup.cs using Guid(ff67c526455160f4690a44f74dee4cbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7697e686ed20b9316fb63f9f9eb5f059') in 0.0338595 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/SynchronousFilter.cs
-  artifactKey: Guid(b9aec9d3b0a86466ab4647d01e8fc87d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/SynchronousFilter.cs using Guid(b9aec9d3b0a86466ab4647d01e8fc87d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2b2ba3e802bc7918b6bff1ae3b5ac3b9') in 0.0431271 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/ITestRunnerListener.cs
-  artifactKey: Guid(d1b534518943030499685344fd1d476d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/ITestRunnerListener.cs using Guid(d1b534518943030499685344fd1d476d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b08b666baaa2353e9060685851128101') in 0.0233649 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestAssets/TestScriptAssetsCreator.cs
-  artifactKey: Guid(1bace19a170f47bb8d19645cfc580796) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestAssets/TestScriptAssetsCreator.cs using Guid(1bace19a170f47bb8d19645cfc580796) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b62e9a08df09dbe0b1a9856b9a1959b8') in 0.0597246 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListTreeView/TestListTreeViewDataSource.cs
-  artifactKey: Guid(ce87c287371edde43a4b5fcfdee7b9ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListTreeView/TestListTreeViewDataSource.cs using Guid(ce87c287371edde43a4b5fcfdee7b9ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3a762cff646d22660c3f523da68d25fa') in 0.0442118 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListBuilder/TestTreeViewBuilder.cs
-  artifactKey: Guid(e17c88b021c2a4c409b3f15b0d80ac62) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListBuilder/TestTreeViewBuilder.cs using Guid(e17c88b021c2a4c409b3f15b0d80ac62) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e2904edde8fd456214b1f1011f8f8531') in 0.1166818 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/Views/TestListGUIBase.cs
-  artifactKey: Guid(b8abb41ceb6f62c45a00197ae59224c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/Views/TestListGUIBase.cs using Guid(b8abb41ceb6f62c45a00197ae59224c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c74841142ef1bc0dff7d40fa9f29127e') in 0.0286385 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListTreeView/TestTreeViewItem.cs
-  artifactKey: Guid(ce567ddbf30368344bc7b80e20cac36e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListTreeView/TestTreeViewItem.cs using Guid(ce567ddbf30368344bc7b80e20cac36e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '43693550badf3049fddff814136d3916') in 0.0701599 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/Analytics/TestTreeData.cs
-  artifactKey: Guid(697ab794770540d6951f83d62b8fa444) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/Analytics/TestTreeData.cs using Guid(697ab794770540d6951f83d62b8fa444) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'de8dfa4cbac7e2a71936a9af58f4809f') in 0.0220535 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/Vector3EqualityComparer.cs
-  artifactKey: Guid(4bd2bc28ff24d5c488844851cb785db0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/Vector3EqualityComparer.cs using Guid(4bd2bc28ff24d5c488844851cb785db0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '57b6f3069dd759e55e8788c4d0562c91') in 0.0334515 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/TestPlatform.cs
-  artifactKey: Guid(743879b4db4bc1a4b829aae4386f4acf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/TestPlatform.cs using Guid(743879b4db4bc1a4b829aae4386f4acf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cbc40f1e5fdbabecf67c0c71bdb60401') in 0.0347337 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_LayoutCustom@2x.png
-  artifactKey: Guid(b753c88a6aeb2674fa1d4f0a4c0a285a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_LayoutCustom@2x.png using Guid(b753c88a6aeb2674fa1d4f0a4c0a285a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a979b785196f1a6b4ccfeaa128fc06be') in 0.0723386 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/SaveUndoIndexTask.cs
-  artifactKey: Guid(cc0ce06a7515c044bb8db4c75db84114) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/SaveUndoIndexTask.cs using Guid(cc0ce06a7515c044bb8db4c75db84114) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ca65d25e6cc4f47fcb00eb0ebb4d361d') in 0.0208847 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/CleanUpContext.cs
-  artifactKey: Guid(1c97cd557b334b27bc325649466d1872) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/CleanUpContext.cs using Guid(1c97cd557b334b27bc325649466d1872) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '261be52e509b7b918c778b943345ac94') in 0.0218836 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/GenerateContextTask.cs
-  artifactKey: Guid(ee6c7dc47e844c3d823b833abbd5f981) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/GenerateContextTask.cs using Guid(ee6c7dc47e844c3d823b833abbd5f981) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1712947f4d6c57a8c0ee6bab472f3fb8') in 0.0184721 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000066 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/ResetInteractionModeTask.cs
-  artifactKey: Guid(5db0e0c612cd489a89d330acbc4ac585) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/ResetInteractionModeTask.cs using Guid(5db0e0c612cd489a89d330acbc4ac585) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6c1be1f52a6fc367a651cd2894cb718c') in 0.0249813 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/PrebuildSetupWithTestDataTask.cs
-  artifactKey: Guid(25d1ed297163243c4a20d6321d057844) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/PrebuildSetupWithTestDataTask.cs using Guid(25d1ed297163243c4a20d6321d057844) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd0670467b82fac6cd825f4f68b297c47') in 0.021818 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/PlatformSetup/PlatformSpecificSetup.cs
-  artifactKey: Guid(6cccd50ebf7384242bda4d7bcb282ebf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/PlatformSetup/PlatformSpecificSetup.cs using Guid(6cccd50ebf7384242bda4d7bcb282ebf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '176fee5786c82b7b3efa0d02bdb9604e') in 0.0508341 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

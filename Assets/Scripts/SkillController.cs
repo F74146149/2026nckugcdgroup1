@@ -8,13 +8,21 @@ public class SkillController : MonoBehaviour
     public bool isGunMode = false;
     public bool IsGunMode => isGunMode;
 
+    [SerializeField]private float gunCooldown = 3f;
+    private float cooldownTimer = 0;
+    
     void Start()
     {
         isGunMode = false;
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)&&!isGunMode)
+        if (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+
+        if(Input.GetKeyDown(KeyCode.E) && !isGunMode && cooldownTimer <= 0f)
         {
             SwitchToGun();
         }
@@ -34,5 +42,7 @@ public class SkillController : MonoBehaviour
 
         sword.SetActive(true);
         gun.SetActive(false);
+
+        cooldownTimer = gunCooldown;
     }
 }

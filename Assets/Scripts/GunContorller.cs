@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GunContorller : MonoBehaviour
@@ -9,6 +10,7 @@ public class GunContorller : MonoBehaviour
     public float ProjectileSpeed = 12f;
 
     public float angle;
+    
     
     void Start()
     {
