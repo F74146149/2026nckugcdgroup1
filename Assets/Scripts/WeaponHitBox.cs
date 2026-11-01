@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class WeaponHitTest : MonoBehaviour
+public class WeaponHitBox : MonoBehaviour
 {
-    private WeaponController weaponController;
+    private SwordController weaponController;
     public int hitDamage = 1;
     void Start()
     {
-        weaponController = GetComponentInParent<WeaponController>();
+        weaponController = GetComponentInParent<SwordController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -37,7 +36,7 @@ public class WeaponHitTest : MonoBehaviour
         {
             Debug.Log("取得EnemyController");
             enemy.Knockback();
-            enemy.TakeDamage(hitDamage);
+            enemy.TakeDamage_E(hitDamage);
             
         }
     }

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public int currentHealth = 3;
     
 
-    public void TakeDamage(int damage)
+    public void TakeDamage_P(int damage)
     {
         currentHealth -= damage;
 

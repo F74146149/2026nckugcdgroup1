@@ -3,18 +3,21 @@ using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour
+public class SwordController : MonoBehaviour
 {
     private Camera mainCamera;
+    private SkillController skillController;
 
     private bool isAttacking = false;
     public bool IsCurrentlyAttacking => isAttacking;
     private float attackTimer = 0f;
     private float attackDuration = 0.25f;
+    public float angle;
     private float startAngle = 0f;
     void Start()
     {
         mainCamera = Camera.main;
+        skillController = GetComponentInParent<SkillController>();
     }
 
     
@@ -26,7 +29,7 @@ public class WeaponController : MonoBehaviour
         Vector3 worldMousePosition = mainCamera.ScreenToWorldPoint(mousePosition);
 
         Vector2 direction = (Vector2)(worldMousePosition - transform.position);
-        float angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
+        angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
 
         if (angle < 0)
         {
@@ -34,7 +37,8 @@ public class WeaponController : MonoBehaviour
         }
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
-        if (Input.GetMouseButtonDown(0) && !isAttacking)
+
+        if (Input.GetMouseButtonDown(0) && !isAttacking && !skillController.isGunMode)
         {
             isAttacking = true;
             attackTimer = 0f;
@@ -43,15 +47,20 @@ public class WeaponController : MonoBehaviour
 
         if(isAttacking)
         {
-            attackTimer += Time.deltaTime;
-            float currentAngle = Mathf.Lerp(startAngle + 60, startAngle - 60, attackTimer/attackDuration);
-            transform.rotation = Quaternion.Euler(0f, 0f, currentAngle);
+            AttackRotation();
+        }
+    }
 
-            if (attackTimer >= attackDuration)
-            {
-                isAttacking = false;
-                Debug.Log("Attack Finished!");
-            }
+    void AttackRotation()
+    {
+        attackTimer += Time.deltaTime;
+        float currentAngle = Mathf.Lerp(startAngle + 60, startAngle - 60, attackTimer / attackDuration);
+        transform.rotation = Quaternion.Euler(0f, 0f, currentAngle);
+
+        if (attackTimer >= attackDuration)
+        {
+            isAttacking = false;
+            Debug.Log("Attack Finished!");
         }
     }
 

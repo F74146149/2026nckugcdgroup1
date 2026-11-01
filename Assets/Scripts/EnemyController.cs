@@ -22,7 +22,7 @@ public class Enemycontroller : MonoBehaviour
 
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage_E(int damage)
     {
         currentHealth -= damage;
 
@@ -79,7 +79,7 @@ public class Enemycontroller : MonoBehaviour
 
             if (player != null)
             {
-                player.TakeDamage(contactDamage);
+                player.TakeDamage_P(contactDamage);
                 Knockback();
             }
         }
