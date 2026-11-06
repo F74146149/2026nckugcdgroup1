@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class WeaponHitBox : MonoBehaviour
 {
     private SwordController weaponController;
-    public int hitDamage = 1;
+    private HashSet<Enemycontroller> hitEnemies = new HashSet<Enemycontroller>();
+
     void Start()
     {
         weaponController = GetComponentInParent<SwordController>();
@@ -14,15 +17,10 @@ public class WeaponHitBox : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("武器碰到：" + other.name);
-
-        if (weaponController == null)
-        {
-            Debug.LogError("找不到 WeaponController！");
-            return;
-        }
+        Debug.Log("碰撞到Enemy");
+        Enemycontroller enemy = other.GetComponent<Enemycontroller>();
 
         // 不是揮刀期間，就不造成擊退
         if (!weaponController.IsCurrentlyAttacking)
@@ -30,16 +28,21 @@ public class WeaponHitBox : MonoBehaviour
             return;
         }
 
-        Enemycontroller enemy = other.GetComponent<Enemycontroller>();
-
-        if (enemy != null)
+        if (enemy != null && !hitEnemies.Contains(enemy))
         {
+            hitEnemies.Add(enemy);
+
             Debug.Log("取得EnemyController");
             enemy.Knockback();
-            enemy.TakeDamage_E(hitDamage);
+            enemy.TakeDamage_E(weaponController.CurrentDamage);
             
         }
     }
-    
+
+    public void ResetHitEnemies()
+    {
+        hitEnemies.Clear();
+    }
+
 
 }

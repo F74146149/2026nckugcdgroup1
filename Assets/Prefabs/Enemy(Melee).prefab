@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemycontroller
   player: {fileID: 0}
-  Speed: 8
+  Speed: 7
   knockback: 5
-  currentHealth: 3
-  contactDamage: 1
+  currentHealth: 100
+  contactDamage: 20
 --- !u!61 &1925974204611705933
 BoxCollider2D:
   m_ObjectHideFlags: 0
