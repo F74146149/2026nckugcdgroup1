@@ -1,22 +1,22 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh" at "2026-11-06T02:22:45.5908734Z"
 Built from '6000.3/staging' branch; Version is '6000.3.23f1 (09d2ecc7fb28) revision 643820'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh" at "2026-11-07T08:41:03.54213Z"
 OS: 'Windows 11  (10.0.26200) Core' Language: 'zh' Physical Memory: 32316 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-11-06T02:22:45Z
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 22256, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+Date: 2026-11-07T08:41:03Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 30316, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              c1d079b4e42e4306a0b13433a81d2bb4
-  Correlation Id:          89ade199ccb9941686b409e5e48a17e8
-  External correlation Id: 1285460568704346039
+  Session Id:              ad00735d30e04f0c9d0ce673511d9987
+  Correlation Id:          664fded52ba5a02b88f558d4ce931dba
+  External correlation Id: 552895045562324862
   Machine Id:              dtD4xlpkob+sEQdHsyBQ6XCV0KE=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-guosh" (connect: 0.00s, validation: 0.00s, handshake: 0.08s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh-notifications" at "2026-11-06T02:22:45.6731619Z"
-[Licensing::Module] Licensing Background thread has ended after 0.08s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-guosh" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-guosh-notifications" at "2026-11-07T08:41:03.5980835Z"
+[Licensing::Module] Licensing Background thread has ended after 0.06s
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.23f1\Editor\Unity.exe
@@ -30,9 +30,9 @@ C:/UnityProject/2026nckugcdgroup1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-59827
+58421
 -parentPid
-15812
+24720
 -analyticsCloudUserId
 33264159680417
 -analyticsCloudProjectId
@@ -93,12 +93,12 @@ C:/UnityProject/2026nckugcdgroup1
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [24692]  Target information:
+Player connection [30292]  Target information:
 
-Player connection [24692]  * "[IP] 140.116.131.35 [Port] 0 [Flags] 2 [Guid] 4288310467 [EditorId] 4288310467 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-VS1PDTRU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [30292]  * "[IP] 140.116.131.35 [Port] 0 [Flags] 2 [Guid] 3836282872 [EditorId] 3836282872 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-VS1PDTRU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [24692] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [24692] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [30292] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [30292] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 4
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -110,7 +110,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 6.91 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 6.48 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.23f1 (09d2ecc7fb28)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/Resources/UnitySubsystems
@@ -129,12 +129,12 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56472
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56440
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003829 seconds.
-- Loaded All Assemblies, in  0.581 seconds
+Registered in 0.002815 seconds.
+- Loaded All Assemblies, in  0.506 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -142,35 +142,35 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.634 seconds
-Domain Reload Profiling: 1210ms
+- Finished resetting the current domain, in  0.456 seconds
+Domain Reload Profiling: 958ms
 	BeginReloadAssembly (171ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (61ms)
+	RebuildCommonClasses (45ms)
 	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (60ms)
-	LoadAllAssembliesAndSetupDomain (266ms)
-		LoadAssemblies (165ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (212ms)
+		LoadAssemblies (166ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (262ms)
-			TypeCache.Refresh (259ms)
-				TypeCache.ScanAssembly (238ms)
+		AnalyzeDomain (208ms)
+			TypeCache.Refresh (206ms)
+				TypeCache.ScanAssembly (188ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (636ms)
+	FinalizeReload (457ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (575ms)
+		SetupLoadedEditorAssemblies (418ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (131ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (135ms)
-			ProcessInitializeOnLoadAttributes (214ms)
-			ProcessInitializeOnLoadMethodAttributes (88ms)
+			InitializePlatformSupportModulesInManaged (107ms)
+			SetLoadedEditorAssemblies (12ms)
+			BeforeProcessingInitializeOnLoad (95ms)
+			ProcessInitializeOnLoadAttributes (150ms)
+			ProcessInitializeOnLoadMethodAttributes (54ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -181,73 +181,78 @@ Domain Reload Profiling: 1210ms
   Product: Unity Personal Version
   Type: Assigned
   Expiration: Unlimited
+Curl error 3: URL rejected: Malformed input to a URL function
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.540 seconds
-Refreshing native plugins compatible for Editor in 6.36 ms, found 5 plugins.
+- Loaded All Assemblies, in  0.947 seconds
+Refreshing native plugins compatible for Editor in 2.95 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 4.54 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.24 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.529 seconds
-Domain Reload Profiling: 3055ms
-	BeginReloadAssembly (293ms)
+- Finished resetting the current domain, in  0.783 seconds
+Domain Reload Profiling: 1720ms
+	BeginReloadAssembly (194ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (49ms)
-	RebuildCommonClasses (61ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (1074ms)
-		LoadAssemblies (706ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (644ms)
+		LoadAssemblies (434ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (532ms)
-			TypeCache.Refresh (382ms)
-				TypeCache.ScanAssembly (349ms)
-			BuildScriptInfoCaches (129ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (1530ms)
+		AnalyzeDomain (326ms)
+			TypeCache.Refresh (228ms)
+				TypeCache.ScanAssembly (210ms)
+			BuildScriptInfoCaches (83ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (784ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1252ms)
+		SetupLoadedEditorAssemblies (643ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (294ms)
-			ProcessInitializeOnLoadAttributes (689ms)
-			ProcessInitializeOnLoadMethodAttributes (225ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (1ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (154ms)
+			ProcessInitializeOnLoadAttributes (340ms)
+			ProcessInitializeOnLoadMethodAttributes (124ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 3.94 ms, found 5 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.06 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
 Curl error 3: URL rejected: Malformed input to a URL function
-Unloading 7431 unused Assets / (4.5 MB). Loaded Objects now: 8249.
-Memory consumption went from 171.0 MB to 166.6 MB.
-Total: 12.281100 ms (FindLiveObjects: 0.900800 ms CreateObjectMapping: 0.908800 ms MarkObjects: 7.076100 ms  DeleteObjects: 3.393200 ms)
+Unloading 7432 unused Assets / (5.0 MB). Loaded Objects now: 8250.
+Memory consumption went from 172.9 MB to 167.8 MB.
+Total: 12.750600 ms (FindLiveObjects: 0.848600 ms CreateObjectMapping: 0.681300 ms MarkObjects: 7.030600 ms  DeleteObjects: 4.188700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 507200.952795 seconds.
-  path: Assets/Scripts/WeaponHitBox.cs
-  artifactKey: Guid(5919b5fab340bff4c94ae67c5d63190e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/WeaponHitBox.cs using Guid(5919b5fab340bff4c94ae67c5d63190e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd92f46fb0226bc65b2f25b0581822d2') in 0.1498361 seconds
+  Time since last request: 616297.364019 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(8c9cfa26abfee488c85f1582747f6a02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scenes/SampleScene.unity using Guid(8c9cfa26abfee488c85f1582747f6a02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0ea2545fc6605de48731275346d71cd2') in 0.0704953 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scripts/WeaponData.cs
+  artifactKey: Guid(e2e9f030b191c534ab7679da58883aaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/WeaponData.cs using Guid(e2e9f030b191c534ab7679da58883aaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5bec8955bfea9d59ba3998f6b6a4c791') in 0.0397394 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0

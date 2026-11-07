@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\SkillController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\SwordController.cs" />
+    <Compile Include="Assets\Scripts\WeaponData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -13,21 +13,18 @@ public class SwordController : MonoBehaviour
     private bool isAttacking = false;
     public bool IsCurrentlyAttacking => isAttacking;
     private float attackTimer = 0f;
-    //三連段攻擊調整
-    [SerializeField]private int firstAttackDamage = 20;
-    [SerializeField] private int secondAttackDamage = 25;
-    [SerializeField] private int thirdAttackDamage = 40;
+    [SerializeField] private WeaponData weaponData;
+   
+    private AttackData currentAttack;
+
     public int CurrentDamage { get; private set; }
 
-    [SerializeField] private float firstAttackDuration = 0.20f;
-    [SerializeField] private float secondAttackDuration = 0.30f;
-    [SerializeField] private float thirdAttackDuration = 0.50f;
     private float currentAttackDuration;
 
     public float angle;
     private float startAngle = 0f;
 
-    [SerializeField]private int maxComboStep = 3;
+    private int MaxComboStep => weaponData.ComboAttacks.Length;
     [SerializeField]private float comboResetDuration = 0.5f;
     private int comboStep = 0;
     private float comboResetTimer = 0f;
@@ -59,9 +56,9 @@ public class SwordController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !skillController.isGunMode)
         {
-            if(!isAttacking && !skillController.isGunMode)
+            if(!isAttacking)
             {
                 if (comboStep == 0)
                 {
@@ -75,7 +72,8 @@ public class SwordController : MonoBehaviour
                 StartAttack();
 
                 
-            } else if (comboStep < maxComboStep && attackTimer >= currentAttackDuration - comboInputWindow)
+            } else if (comboStep < MaxComboStep && 
+                attackTimer >= currentAttackDuration - comboInputWindow)
             {
                 comboQueued = true;
 
@@ -106,30 +104,10 @@ public class SwordController : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
 
-        float swingStartOffset = 60f;
-        float swingEndOffset = -60f;
-
-        switch(comboStep)
-        {
-            case 1:
-                swingStartOffset = 60f;
-                swingEndOffset = -60f;
-                break;
-
-            case 2:
-                swingStartOffset = -60f;
-                swingEndOffset = 60f;
-                break;
-
-            case 3:
-                swingStartOffset = 90f;
-                swingEndOffset = -90f;
-                break;
-        }
-
         float progress = Mathf.Clamp01(attackTimer / currentAttackDuration);
 
-        float currentAngle = Mathf.Lerp(startAngle + swingStartOffset, startAngle + swingEndOffset, progress);
+        float currentAngle = Mathf.Lerp
+            (startAngle + currentAttack.startAngle, startAngle + currentAttack.endAngle, progress);
 
         transform.rotation = Quaternion.Euler(0f, 0f, currentAngle);
 
@@ -137,7 +115,7 @@ public class SwordController : MonoBehaviour
         {
             isAttacking = false;
 
-            if (comboStep >= maxComboStep)
+            if (comboStep >= MaxComboStep)
             {
                 comboStep = 0;
                 comboQueued = false;
@@ -173,23 +151,22 @@ public class SwordController : MonoBehaviour
 
         weaponHitBox.ResetHitEnemies();
 
-
-        switch (comboStep)
+        if (comboStep < 1 || comboStep > weaponData.ComboAttacks.Length)
         {
-            case 1:
-                currentAttackDuration = firstAttackDuration;
-                CurrentDamage = firstAttackDamage;
-                break;
-
-            case 2:
-                currentAttackDuration = secondAttackDuration;
-                CurrentDamage = secondAttackDamage;
-                break;
-
-            case 3:
-                currentAttackDuration = thirdAttackDuration;
-                CurrentDamage = thirdAttackDamage;
-                break;
+            Debug.LogError("Combo Step 超出 AttackData 範圍！");
+            return;
         }
+
+        if (weaponData.ComboAttacks == null || weaponData.ComboAttacks.Length == 0)
+        {
+            Debug.LogError("尚未設定 Combo Attacks！");
+            return;
+        }
+
+        currentAttack = weaponData.ComboAttacks[comboStep - 1];
+        currentAttackDuration = currentAttack.duration;
+        CurrentDamage = currentAttack.damage;
     }
 }
+
+

@@ -440,14 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7018998fd34e964db83edb3e9f5d462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponController
-  firstAttackDamage: 20
-  secondAttackDamage: 25
-  thirdAttackDamage: 40
-  firstAttackDuration: 0.2
-  secondAttackDuration: 0.3
-  thirdAttackDuration: 0.5
+  weaponData: {fileID: 11400000, guid: c39417dd050bd28418f24d8047b41c7c, type: 2}
   angle: 0
-  maxComboStep: 3
   comboResetDuration: 0.8
   comboInputWindow: 0.15
 --- !u!1 &372760047
@@ -1210,7 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850540d69dc5dbc4db89764113747120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  Speed: 10
+  Speed: 5
   maxHealth: 100
   currentHealth: 100
 --- !u!61 &1435801448
@@ -1685,7 +1679,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 600365848970909418, guid: 8529820fbd0b11749aab5304cb8487f7, type: 3}
       propertyPath: Speed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 600365848970909418, guid: 8529820fbd0b11749aab5304cb8487f7, type: 3}
       propertyPath: player
@@ -1693,7 +1687,7 @@ PrefabInstance:
       objectReference: {fileID: 1435801446}
     - target: {fileID: 600365848970909418, guid: 8529820fbd0b11749aab5304cb8487f7, type: 3}
       propertyPath: knockback
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 945129303655287373, guid: 8529820fbd0b11749aab5304cb8487f7, type: 3}
       propertyPath: m_Name
