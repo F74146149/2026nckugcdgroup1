@@ -1,0 +1,33 @@
+本教學未使用github desktop，想用的可以用，它比較方便但不好除錯
+
+初次下載github資料流程：
+1.下載並安裝git
+2.在檔案總管中挑一個資料夾，之後放檔案的地方(可以是unity原本存檔案的資料夾，同時路徑上盡量不要有中文)
+3.在資料夾內的空白處右鍵，打開terminal(又名終端，git blash也可以)
+4.輸入git clone  https://github.com/F74146149/2026nckugcdgroup1.git
+5.沒意外了話它會在資料夾中再生一個名為2026nckugcdgroup1的資料夾
+6.用unity hub開啟2026nckugcdgroup1即可(由於github上的內容沒有Library資料夾，所以unity初次開啟時會重新生成，會開比較久)
+注：github上已有.gitignore不用另外下載
+
+切換本地未有的branch(分支)：
+1.在資料夾內的空白處右鍵，打開terminal(又名終端，git blash也可以)
+2.輸入git fetch 以更新遠端branch的資訊
+3.輸入git branch -r以查看遠端有哪些branch
+4.輸入git switch --track <branch名稱>以新增並切換至指定branch(branch名稱可以由上一指令查看，本整令輸入範例：git switch -c origin/prototype-buildmap)
+
+切換本地已有的branch：
+1.在資料夾內的空白處右鍵，打開terminal(又名終端，git blash也可以)
+2.輸入git branch或git branch -a(查看所有包括隱藏)來看本地端有哪些branch(前面有*的是你目前所在的branch)
+3.輸入git switch <branch名稱>來切換至指定branch(branch名稱可以由上一指令查看，本整令輸入範例：git switch main)
+
+更新本地資料
+1.在指定資料夾打開終端後輸入git pull
+
+上傳資料：
+1.輸入git status，查看更改的檔案
+2.輸入git add <更改內容>添加檔案至本次上傳，或使用git add .來添加全部
+3.輸入git commit -m "你為什麼上傳(這裡請好好寫)"
+4.輸入git push上傳
+
+遇到其他問題、看不懂或紅字報錯訊息，可以把終端內容複製起來問AI，如有遺漏或錯誤，還請見諒。
+若有新建branch問題可以找我
