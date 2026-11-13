@@ -19,7 +19,7 @@ public class RoomManager : MonoBehaviour
         GenerateMap();
     }
 
-    void GenerateMap()
+    void StartGenerateMap()
     {
         if (floor == null || wall == null || rock == null || water == null)
         {
