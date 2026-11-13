@@ -4,8 +4,8 @@ using UnityEngine;
 public class GunContorller : MonoBehaviour
 {
     private Camera mainCamera;
-    public Transform firePoint;
-    public GameObject projectilePrefab;
+    [SerializeField]private Transform firePoint;
+    [SerializeField]private GameObject projectilePrefab;
     private SkillController skillController;
     public float ProjectileSpeed = 12f;
 

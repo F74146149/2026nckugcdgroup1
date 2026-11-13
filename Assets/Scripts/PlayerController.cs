@@ -7,18 +7,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Enemycontroller enemycontroller;
     //可調動基本數值
-    public float Speed = 5f;
+    public float PlayerSpeed = 5f;
     public int maxHealth = 3;
-    public int currentHealth = 3;
+    public int PlayercurrentHealth = 3;
     
     //角色受傷參考
     public void TakeDamage_P(int damage)
     {
-        currentHealth -= damage;
+        PlayercurrentHealth -= damage;
 
-        if (currentHealth <= 0)
+        if (PlayercurrentHealth <= 0)
         {
-            currentHealth = 0;
+            PlayercurrentHealth = 0;
             Die();
         }
     }
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //利用物理引擎線性移動
-        rb.linearVelocity = movement * Speed;
+        rb.linearVelocity = movement * PlayerSpeed;
 
         
     }

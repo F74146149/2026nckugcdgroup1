@@ -10,14 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2e9f030b191c534ab7679da58883aaa, type: 3}
-  m_Name: AxeData
+  m_Name: SwordData
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  weaponName: Sword
+  weaponSprite: {fileID: -3373313186662541018, guid: a975c8139bc804648a8e6673fe19ade8, type: 3}
   comboAttacks:
-  - damage: 45
+  - damage: 20
+    duration: 0.2
+    startAngle: 60
+    endAngle: -60
+  - damage: 25
+    duration: 0.25
+    startAngle: -60
+    endAngle: 60
+  - damage: 40
     duration: 0.35
     startAngle: 90
     endAngle: -90
-  - damage: 45
-    duration: 0.35
-    startAngle: -90
-    endAngle: 90
+  comboResetDuration: 0.5
+  comboInputWindow: 0.15

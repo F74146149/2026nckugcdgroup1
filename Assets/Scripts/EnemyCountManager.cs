@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class EnemyCountManager : MonoBehaviour
 {
     public int enemyCount = 3;
 

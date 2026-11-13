@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SkillController : MonoBehaviour
 {
-    public GameObject sword;
-    public GameObject gun;
+    [SerializeField] private GameObject sword;
+    [SerializeField] private GameObject gun;
 
-    public bool isGunMode = false;
+    private bool isGunMode = false;
     public bool IsGunMode => isGunMode;
 
     [SerializeField]private float gunCooldown = 3f;

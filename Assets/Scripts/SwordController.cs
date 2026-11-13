@@ -24,12 +24,16 @@ public class SwordController : MonoBehaviour
     public float angle;
     private float startAngle = 0f;
 
-    private int MaxComboStep => weaponData.ComboAttacks.Length;
-    [SerializeField]private float comboResetDuration = 0.5f;
+    private int MaxComboStep =>
+    weaponData != null && weaponData.ComboAttacks != null
+    ? weaponData.ComboAttacks.Length
+    : 0;
+
+    //[SerializeField]private float comboResetDuration = 0.5f;
     private int comboStep = 0;
     private float comboResetTimer = 0f;
     private bool comboQueued = false;
-    [SerializeField]private float comboInputWindow = 0.15f;
+    //[SerializeField]private float comboInputWindow = 0.15f;
 
     void Start()
     {
@@ -56,7 +60,7 @@ public class SwordController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        if (Input.GetMouseButtonDown(0) && !skillController.isGunMode)
+        if (Input.GetMouseButtonDown(0) && !skillController.IsGunMode)
         {
             if(!isAttacking)
             {
@@ -73,7 +77,7 @@ public class SwordController : MonoBehaviour
 
                 
             } else if (comboStep < MaxComboStep && 
-                attackTimer >= currentAttackDuration - comboInputWindow)
+                attackTimer >= currentAttackDuration - weaponData.ComboInputWindow)
             {
                 comboQueued = true;
 
@@ -135,7 +139,7 @@ public class SwordController : MonoBehaviour
             } 
             else
             {
-                comboResetTimer = comboResetDuration;
+                comboResetTimer = weaponData.ComboResetDuration;
             }
 
         }
@@ -151,21 +155,43 @@ public class SwordController : MonoBehaviour
 
         weaponHitBox.ResetHitEnemies();
 
-        if (comboStep < 1 || comboStep > weaponData.ComboAttacks.Length)
+        if (weaponData == null ||
+        weaponData.ComboAttacks == null ||
+        weaponData.ComboAttacks.Length == 0)
         {
-            Debug.LogError("Combo Step 超出 AttackData 範圍！");
+            Debug.LogError("尚未設定有效的 WeaponData！");
             return;
         }
 
-        if (weaponData.ComboAttacks == null || weaponData.ComboAttacks.Length == 0)
+        if (comboStep < 1 || comboStep > MaxComboStep)
         {
-            Debug.LogError("尚未設定 Combo Attacks！");
+            Debug.LogError("Combo Step 超出 AttackData 範圍！");
             return;
         }
 
         currentAttack = weaponData.ComboAttacks[comboStep - 1];
         currentAttackDuration = currentAttack.duration;
         CurrentDamage = currentAttack.damage;
+
+    }
+
+    public void SetWeaponData(WeaponData newWeaponData)
+    {
+        if (newWeaponData == null)
+        {
+            Debug.LogError("傳入的 WeaponData 為空！");
+            return;
+        }
+
+        weaponData = newWeaponData;
+
+        isAttacking = false;
+        attackTimer = 0f;
+        comboStep = 0;
+        comboResetTimer = 0f;
+        comboQueued = false;
+
+        Debug.Log("目前裝備武器：" + weaponData.WeaponName);
     }
 }
 

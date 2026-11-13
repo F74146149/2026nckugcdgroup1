@@ -4,12 +4,12 @@ using UnityEngine;
 public class Enemycontroller : MonoBehaviour
 {
     //角色位置抓取
-    public Transform player;
+    [SerializeField]private Transform player;
 
-    public float Speed = 2f;
+    public float EnemySpeed = 2f;
     //數值參考宣告
     private Rigidbody2D rb;
-    private GameManager gameManager;
+    private EnemyCountManager gameManager;
 
     private Vector2 currentDirection;
 
@@ -39,7 +39,7 @@ public class Enemycontroller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        gameManager = FindFirstObjectByType<GameManager>();
+        gameManager = FindFirstObjectByType<EnemyCountManager>();
         //敵人數量調整(目前只能指定固定數量，請寫程式改成"隨機數量皆可"，也請配合GameManager)
     }
 
@@ -68,7 +68,7 @@ public class Enemycontroller : MonoBehaviour
             direction = direction.normalized;
         }
 
-        rb.linearVelocity = direction * Speed;
+        rb.linearVelocity = direction * EnemySpeed;
 
         currentDirection = direction;
     }
@@ -95,7 +95,7 @@ public class Enemycontroller : MonoBehaviour
 
     }
 
-    public void Die()
+    private void Die()
     {
         gameManager.EnemyDefeated();
         Destroy(gameObject);

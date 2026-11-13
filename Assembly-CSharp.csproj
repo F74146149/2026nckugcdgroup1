@@ -55,7 +55,8 @@
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\ProjectilContoller.cs" />
     <Compile Include="Assets\Scripts\SkillController.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\EnemyCountManager.cs" />
+    <Compile Include="Assets\Scripts\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\SwordController.cs" />
     <Compile Include="Assets\Scripts\WeaponData.cs" />
   </ItemGroup>
