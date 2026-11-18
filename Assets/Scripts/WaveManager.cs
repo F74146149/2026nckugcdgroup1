@@ -46,7 +46,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    void countwavs()
+    public void countwaves()
     {
         for(int i=0;i<waves;i++)
         {

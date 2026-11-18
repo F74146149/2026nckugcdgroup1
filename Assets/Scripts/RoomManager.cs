@@ -15,7 +15,7 @@ public class RoomManager : MonoBehaviour
     public int map_width;
     private readonly List<Vector3> enemySpawnPoints = new List<Vector3>();
 
-    void GenerateMap()
+    public void GenerateMap()
     {
         map_width = Random.Range(16, 64);
         map_height = Random.Range(10, 40);
