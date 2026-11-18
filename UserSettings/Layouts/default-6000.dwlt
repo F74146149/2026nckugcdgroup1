@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 0.23660439, y: -0.05138175, z: -0.056317426}
     speed: 2
-    m_Value: {x: 0.2202084, y: -0.055585846, z: -0.053584762}
+    m_Value: {x: 0.23660439, y: -0.05138175, z: -0.056317426}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 6.345852
     speed: 2
-    m_Value: 6.0725856
+    m_Value: 6.345852
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1186,9 +1186,9 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 50624
+      - m_Data: -2846
       m_LastClickedID:
-        m_Data: 50624
+        m_Data: -2846
       m_ExpandedIDs:
       - m_Data: -1364
       m_RenameOverlay:
@@ -1368,7 +1368,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/GameObjects
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/GameObjects
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\gggg\Unity\2026nckugcdgroup1
   m_LockTracker:
@@ -1387,9 +1387,9 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 51032
+    - m_Data: 51022
     m_LastClickedID:
-      m_Data: 51032
+      m_Data: 51022
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 50738
@@ -1454,8 +1454,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 50624
-    m_LastClickedInstanceID: 50624
+    - m_Data: -2846
+    m_LastClickedInstanceID: -2846
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 53056
