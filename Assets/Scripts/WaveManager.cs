@@ -7,11 +7,6 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private RoomManager roomManager;
     private int waves=3; 
 
-    void Start()
-    {
-        countwavs();
-    }
-
     // Update is called once per frame
     void Update()
     {
