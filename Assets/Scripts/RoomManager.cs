@@ -3,24 +3,27 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    private const float RockFreeRadius = 1f;
+
     [SerializeField] GameObject floor;
     [SerializeField] GameObject wall;
 
     [SerializeField] GameObject rock;
     [SerializeField] GameObject water;
 
-    int map_height;
-    int map_width;
+    public int map_height;
+    public int map_width;
+    private readonly List<Vector3> enemySpawnPoints = new List<Vector3>();
 
-    void Start()
+    void Awake()
     {
-        map_width = Random.Range(16, 64);
-        map_height = Random.Range(10, 40);
         GenerateMap();
     }
 
-    void StartGenerateMap()
+    void GenerateMap()
     {
+        map_width = Random.Range(16, 64);
+        map_height = Random.Range(10, 40);
         if (floor == null || wall == null || rock == null || water == null)
         {
             Debug.LogError("Assign floor, wall, rock, and water prefabs in the Inspector.", this);
@@ -30,7 +33,8 @@ public class RoomManager : MonoBehaviour
         float startX = -(map_width - 1) / 2f;
         float startY = -(map_height - 1) / 2f;
         GameObject[,] terrain = new GameObject[map_width, map_height];
-        PlaceClusters(terrain, rock, Random.Range(2, 4));
+        enemySpawnPoints.Clear();
+        PlaceClusters(terrain, rock, Random.Range(2, 4), true);
         PlaceClusters(terrain, water, Random.Range(2, 4));
 
         for (int x = 0; x < map_width; x++)
@@ -49,13 +53,23 @@ public class RoomManager : MonoBehaviour
                     prefab = terrain[x, y] ?? floor;
                 }
 
-                Vector3 position = new Vector3(startX + x, startY + y, 0f);
+                Vector3 position = new Vector3(startX + x, startY + y, 10f);
+                if (!isBorder && terrain[x, y] == null)
+                {
+                    enemySpawnPoints.Add(new Vector3(position.x,position.y,0f));
+                }
+
                 Instantiate(prefab, position, Quaternion.identity, transform);
             }
         }
     }
 
-    void PlaceClusters(GameObject[,] terrain, GameObject prefab, int clusterCount)
+    public Vector3[] GetEnemySpawnPoints()
+    {
+        return enemySpawnPoints.ToArray();
+    }
+
+    void PlaceClusters(GameObject[,] terrain, GameObject prefab, int clusterCount, bool avoidOrigin = false)
     {
         Vector2Int[] directions =
         {
@@ -72,7 +86,7 @@ public class RoomManager : MonoBehaviour
             {
                 for (int y = 1; y < map_height - 1; y++)
                 {
-                    if (terrain[x, y] == null)
+                    if (terrain[x, y] == null && (!avoidOrigin || !IsInRockFreeArea(x, y)))
                     {
                         availableCells.Add(new Vector2Int(x, y));
                     }
@@ -99,11 +113,13 @@ public class RoomManager : MonoBehaviour
                         Vector2Int neighbor = cell + direction;
                         if (neighbor.x > 0 && neighbor.x < map_width - 1
                             && neighbor.y > 0 && neighbor.y < map_height - 1
-                            && terrain[neighbor.x, neighbor.y] == null)
+                            && terrain[neighbor.x, neighbor.y] == null
+                            && (!avoidOrigin || !IsInRockFreeArea(neighbor.x, neighbor.y)))
                         {
                             frontier.Add(neighbor);
                         }
                     }
+
                 }
 
                 if (frontier.Count == 0)
@@ -116,5 +132,12 @@ public class RoomManager : MonoBehaviour
                 cluster.Add(next);
             }
         }
+    }
+
+    bool IsInRockFreeArea(int x, int y)
+    {
+        float worldX = x - (map_width - 1) / 2f;
+        float worldY = y - (map_height - 1) / 2f;
+        return Mathf.Abs(worldX) <= RockFreeRadius && Mathf.Abs(worldY) <= RockFreeRadius;
     }
 }
