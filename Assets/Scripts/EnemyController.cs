@@ -24,7 +24,7 @@ public class Enemycontroller : MonoBehaviour
 
 
 
-    public void TakeDamage_E(int damage)
+    public void TakeDamage_E(float damage)
     {
         currentHealth -= damage;
 

@@ -17,7 +17,7 @@ public class SwordController : MonoBehaviour
    
     private AttackData currentAttack;
 
-    public int CurrentDamage { get; private set; }
+    public float CurrentDamage { get; private set; }
 
     private float currentAttackDuration;
 

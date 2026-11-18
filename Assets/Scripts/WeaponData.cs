@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class AttackData
 {
-    public int damage;
+    public float damage;
     public float duration;
     public float startAngle;
     public float endAngle;
