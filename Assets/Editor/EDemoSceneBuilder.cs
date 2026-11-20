@@ -88,10 +88,47 @@ public static class EDemoSceneBuilder
             MakePassive("Passive_SekhmetFury", "Sekhmet's Fury", 55, Rarity.Epic, 1,
                 Mod(StatType.Attack, ModifierKind.Percent, 0.5f),
                 Mod(StatType.MaxHealth, ModifierKind.Flat, -1f)),
+
+            // 消耗品：買了立刻回 1 滴血
+            MakeHealItem("Item_LotusElixir", "Lotus Elixir", 15, 1),
         };
 
         AssetDatabase.SaveAssets();
         return list;
+    }
+
+    private static PassiveData MakeHealItem(string fileName, string displayName, int price, int heal)
+    {
+        string path = PassiveFolder + "/" + fileName + ".asset";
+        PassiveData existing = AssetDatabase.LoadAssetAtPath<PassiveData>(path);
+        if (existing != null) return existing;
+
+        PassiveData p = ScriptableObject.CreateInstance<PassiveData>();
+        p.displayName = displayName;
+        p.price = price;
+        p.rarity = Rarity.Common;
+        p.consumable = true;
+        p.healAmount = heal;
+        AssetDatabase.CreateAsset(p, path);
+        return p;
+    }
+
+    [MenuItem("Tools/組員E/把所有被動能力與道具加入商店")]
+    public static void AddAllItemsToShopMenu()
+    {
+        ShopManager shop = Object.FindFirstObjectByType<ShopManager>();
+        if (shop == null)
+        {
+            EditorUtility.DisplayDialog("組員E", "目前打開的場景裡沒有 ShopManager。", "OK");
+            return;
+        }
+
+        List<PassiveData> all = FindAllPassives();
+        Undo.RecordObject(shop, "Add all items to shop");
+        SetList(shop, "itemPool", all);
+        EditorSceneManager.MarkSceneDirty(shop.gameObject.scene);
+        EditorGUIUtility.PingObject(shop);
+        Debug.Log("組員E：ShopManager 的 Item Pool 已更新，共 " + all.Count + " 個（記得按 Ctrl+S 存檔）", shop);
     }
 
     private static StatModifier Mod(StatType stat, ModifierKind kind, float value)

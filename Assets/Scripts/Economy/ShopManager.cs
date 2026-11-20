@@ -31,6 +31,7 @@ public class ShopManager : MonoBehaviour
         NotEnoughGold,
         SoldOut,
         MaxStacks,
+        HealthFull,   // 補血道具，但玩家已經滿血
         Invalid,
     }
 
@@ -118,18 +119,36 @@ public class ShopManager : MonoBehaviour
         if (offer.item == null) return BuyResult.Invalid;
         if (offer.sold) return BuyResult.SoldOut;
 
+        PassiveData item = offer.item;
         PassiveManager passives = PassiveManager.Instance;
         CurrencyManager currency = CurrencyManager.Instance;
-        if (passives == null || currency == null)
+        if (currency == null || (!item.consumable && passives == null))
         {
             Debug.LogError("ShopManager：場景裡需要 CurrencyManager 和 PassiveManager。", this);
             return BuyResult.Invalid;
         }
 
-        if (!passives.CanAdd(offer.item)) return BuyResult.MaxStacks;
+        if (!item.consumable && !passives.CanAdd(item)) return BuyResult.MaxStacks;
+
+        // 純補血的消耗品：滿血時不給買，避免浪費錢
+        bool healOnly = item.consumable && item.healAmount > 0;
+        if (healOnly && !PlayerHealing.IsHealUseful)
+        {
+            if (!PlayerHealing.HasReceiver)
+            {
+                Debug.LogWarning("ShopManager：沒有任何腳本接收補血（PlayerHealing.OnHealRequested），補血道具不會有效果。", this);
+            }
+            return BuyResult.HealthFull;
+        }
+
         if (!currency.TrySpendGold(offer.price)) return BuyResult.NotEnoughGold;
 
-        passives.TryAdd(offer.item);
+        // 立即效果
+        if (item.healAmount > 0) PlayerHealing.Heal(item.healAmount);
+
+        // 被動能力才會留下來
+        if (!item.consumable) passives.TryAdd(item);
+
         offer.sold = true;
         OnOffersChanged?.Invoke();
         return BuyResult.Success;
@@ -158,7 +177,8 @@ public class ShopManager : MonoBehaviour
         foreach (PassiveData p in itemPool)
         {
             if (p == null || candidates.Contains(p)) continue;
-            if (PassiveManager.Instance != null && !PassiveManager.Instance.CanAdd(p)) continue;
+            // 被動能力疊滿就不再出現；消耗品每次都可能出現
+            if (!p.consumable && PassiveManager.Instance != null && !PassiveManager.Instance.CanAdd(p)) continue;
             candidates.Add(p);
         }
 

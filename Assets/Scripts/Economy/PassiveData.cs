@@ -36,7 +36,14 @@ public class PassiveData : ScriptableObject
     [Tooltip("最多能疊加幾次，0 = 不限")]
     [Min(0)] public int maxStacks = 0;
 
-    [Header("效果")]
+    [Header("消耗品（買了立刻生效，不會變成被動能力）")]
+    [Tooltip("勾選後：買了只觸發下面的立即效果，不會加到擁有的被動能力裡，也不會套用 Modifiers")]
+    public bool consumable = false;
+
+    [Tooltip("買了立刻補幾滴血（0 = 不補）")]
+    [Min(0)] public int healAmount = 0;
+
+    [Header("效果（被動能力用）")]
     public List<StatModifier> modifiers = new List<StatModifier>();
 
     /// <summary>取得說明文字（沒填的話自動產生）</summary>
@@ -45,11 +52,21 @@ public class PassiveData : ScriptableObject
         if (!string.IsNullOrWhiteSpace(description)) return description;
 
         var sb = new StringBuilder();
-        for (int i = 0; i < modifiers.Count; i++)
+
+        if (healAmount > 0)
         {
-            if (i > 0) sb.Append('\n');
-            sb.Append(modifiers[i].Describe());
+            sb.Append("Restore ").Append(healAmount).Append(" HP");
         }
+
+        if (!consumable)
+        {
+            for (int i = 0; i < modifiers.Count; i++)
+            {
+                if (sb.Length > 0) sb.Append('\n');
+                sb.Append(modifiers[i].Describe());
+            }
+        }
+
         return sb.ToString();
     }
 

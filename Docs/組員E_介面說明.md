@@ -40,7 +40,30 @@ rb.linearVelocity = movement * speed;
 healthUI.SetHealth(currentHealth, maxHealth);
 ```
 
-### 4. 死亡時打開失敗畫面
+### 4. 接上補血（商店的補血道具要用）
+
+商店的 Lotus Elixir 買了會回 1 滴血。血量在 A 這邊，所以要接上 `PlayerHealing`：
+
+```csharp
+void OnEnable()
+{
+    PlayerHealing.OnHealRequested += Heal;                    // 收到補血要求
+    PlayerHealing.CanHeal = () => currentHealth < maxHealth;  // 滿血時商店不讓玩家買
+}
+void OnDisable()
+{
+    PlayerHealing.OnHealRequested -= Heal;
+    PlayerHealing.CanHeal = null;
+}
+
+void Heal(int amount)
+{
+    currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+    // 記得更新血量 UI
+}
+```
+
+### 5. 死亡時打開失敗畫面
 
 ```csharp
 if (GameResultUI.Instance != null) GameResultUI.Instance.ShowGameOver();
@@ -128,7 +151,11 @@ if (GameResultUI.Instance != null) GameResultUI.Instance.ShowVictory();
 ## 新增被動能力
 
 Project 視窗右鍵 → **Create → 組員E → 被動能力**，填好名稱、價格、稀有度、效果，
-再拖進 ShopManager 的 Item Pool 就會出現在商店。
+再拖進 ShopManager 的 Item Pool 就會出現在商店
+（或打開有 ShopManager 的場景，按 **Tools → 組員E → 把所有被動能力與道具加入商店**）。
+
+**消耗品**（例如補血藥）：勾選 **Consumable**，填 **Heal Amount**。
+買了立刻生效，不會留在擁有清單，也不會套用 Modifiers；每次開商店都可能再出現。
 
 效果計算：`最終值 = (基礎值 + Flat 加總) × (1 + Percent 加總)`
 

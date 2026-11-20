@@ -52,7 +52,8 @@ public class ShopItemSlotUI : MonoBehaviour
         if (rarityText != null)
         {
             string stackInfo = ownedStacks > 0 ? "  (Owned x" + ownedStacks + ")" : "";
-            rarityText.text = item.rarity.ToString().ToUpper() + stackInfo;
+            string kind = item.consumable ? " ITEM" : "";
+            rarityText.text = item.rarity.ToString().ToUpper() + kind + stackInfo;
             rarityText.color = rarityColor;
         }
 

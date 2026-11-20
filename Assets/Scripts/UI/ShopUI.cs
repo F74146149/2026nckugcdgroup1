@@ -145,6 +145,7 @@ public class ShopUI : MonoBehaviour
             case ShopManager.BuyResult.Success: ShowMessage("Purchased!"); break;
             case ShopManager.BuyResult.NotEnoughGold: ShowMessage("Not enough gold"); break;
             case ShopManager.BuyResult.MaxStacks: ShowMessage("Already maxed"); break;
+            case ShopManager.BuyResult.HealthFull: ShowMessage("HP is already full"); break;
             case ShopManager.BuyResult.SoldOut: ShowMessage("Sold out"); break;
         }
     }

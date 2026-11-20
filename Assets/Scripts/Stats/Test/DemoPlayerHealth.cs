@@ -24,6 +24,10 @@ public class DemoPlayerHealth : MonoBehaviour
         if (PlayerStats.Instance != null) PlayerStats.Instance.OnStatsChanged += HandleStatsChanged;
         if (GameResultUI.Instance != null) GameResultUI.Instance.OnRetryWithoutReload += Refill;
 
+        // 接上補血（商店的補血道具會透過這裡補血）
+        PlayerHealing.OnHealRequested += Heal;
+        PlayerHealing.CanHeal = CanHeal;
+
         Refresh();
     }
 
@@ -31,6 +35,20 @@ public class DemoPlayerHealth : MonoBehaviour
     {
         if (PlayerStats.Instance != null) PlayerStats.Instance.OnStatsChanged -= HandleStatsChanged;
         if (GameResultUI.Instance != null) GameResultUI.Instance.OnRetryWithoutReload -= Refill;
+
+        PlayerHealing.OnHealRequested -= Heal;
+        if (PlayerHealing.CanHeal == (System.Func<bool>)CanHeal) PlayerHealing.CanHeal = null;
+    }
+
+    private bool CanHeal()
+    {
+        return currentHealth < maxHealth;
+    }
+
+    private void Heal(int amount)
+    {
+        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        Refresh();
     }
 
     private void Update()
@@ -41,11 +59,7 @@ public class DemoPlayerHealth : MonoBehaviour
 
         if (keyboard.jKey.wasPressedThisFrame) TakeDamage(1);
 
-        if (keyboard.hKey.wasPressedThisFrame)
-        {
-            currentHealth = Mathf.Min(maxHealth, currentHealth + 1);
-            Refresh();
-        }
+        if (keyboard.hKey.wasPressedThisFrame) Heal(1);
     }
 
     private void TakeDamage(int damage)
