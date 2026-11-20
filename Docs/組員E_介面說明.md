@@ -7,69 +7,36 @@
 
 ## 組員 A（玩家）
 
-### 1. 血量上限：跟著被動能力變化
+### 血量：不用改程式
 
-```csharp
-// 開場時
-maxHealth = PlayerStats.Instance.MaxHealth;
+E 的 `PlayerHealthDisplay` 會直接讀 `PlayerController` 現在的兩個欄位：
 
-// 買到加血上限的能力時會收到通知
-void OnEnable()  { if (PlayerStats.Instance != null) PlayerStats.Instance.OnStatsChanged += OnStatsChanged; }
-void OnDisable() { if (PlayerStats.Instance != null) PlayerStats.Instance.OnStatsChanged -= OnStatsChanged; }
+| 欄位 | 用途 |
+|---|---|
+| `maxHealth` | 最大血量 |
+| `PlayercurrentHealth` | 目前血量 |
 
-void OnStatsChanged()
-{
-    int newMax = PlayerStats.Instance.MaxHealth;
-    if (newMax > maxHealth) currentHealth += newMax - maxHealth; // 多出來的那格補滿
-    maxHealth = newMax;
-    currentHealth = Mathf.Min(currentHealth, maxHealth);
-}
-```
+它會自動做這些事，**A 不用寫任何程式**：
 
-### 2. 移動速度
+- 血量變了 → 更新愛心、血條、數字
+- 買到加血上限的被動 → 改 `maxHealth`，多出來的那格補滿
+- 買到補血道具 → 加到 `PlayercurrentHealth`（滿血時商店不讓玩家買）
+- 血量歸零 → 打開失敗畫面
+
+**請 A 注意三件事：**
+
+1. **如果要改這兩個欄位的名稱，先跟 E 說。** E 只要在 Inspector 改名稱就好，不用改程式。
+2. 玩家物件的 Tag 要是 **Player**（EnemyController 本來就靠這個 Tag 判斷）。
+3. **不要另外接 `PlayerHealing`**，不然補血會補兩次。
+
+### 移動速度（可選）
+
+想讓「移動速度」被動能力生效的話：
 
 ```csharp
 float speed = PlayerStats.Instance != null ? PlayerStats.Instance.MoveSpeed : PlayerSpeed;
 rb.linearVelocity = movement * speed;
 ```
-
-### 3. 血量 UI：血量改變時呼叫
-
-```csharp
-// 場景裡的 HealthUI（拖進 Inspector 或用 FindFirstObjectByType）
-healthUI.SetHealth(currentHealth, maxHealth);
-```
-
-### 4. 接上補血（商店的補血道具要用）
-
-商店的 Lotus Elixir 買了會回 1 滴血。血量在 A 這邊，所以要接上 `PlayerHealing`：
-
-```csharp
-void OnEnable()
-{
-    PlayerHealing.OnHealRequested += Heal;                    // 收到補血要求
-    PlayerHealing.CanHeal = () => currentHealth < maxHealth;  // 滿血時商店不讓玩家買
-}
-void OnDisable()
-{
-    PlayerHealing.OnHealRequested -= Heal;
-    PlayerHealing.CanHeal = null;
-}
-
-void Heal(int amount)
-{
-    currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
-    // 記得更新血量 UI
-}
-```
-
-### 5. 死亡時打開失敗畫面
-
-```csharp
-if (GameResultUI.Instance != null) GameResultUI.Instance.ShowGameOver();
-```
-
-可以參考 `Assets/Scripts/Stats/Test/DemoPlayerHealth.cs`，裡面是完整的示範。
 
 ---
 
@@ -143,7 +110,11 @@ if (GameResultUI.Instance != null) GameResultUI.Instance.ShowVictory();
 |---|---|---|
 | RunSystems | `CurrencyManager`、`PlayerStats`、`PassiveManager` | 換場景會保留，整局只要一個 |
 | ShopManager | `ShopManager` | Item Pool 拖入 `Assets/Data/Passives` 裡的被動能力 |
-| Canvas | `HealthUI`、`CoinUI`、`StatsPanelUI`、`ShopUI`、`GameResultUI` | 可以直接從 `E_ShopTest` 場景複製 |
+| Canvas | `PlayerHealthDisplay`、`HealthUI`、`CoinUI`、`StatsPanelUI`、`ShopUI`、`GameResultUI` | 可以直接從 `E_ShopTest` 場景複製 |
+
+> `E_ShopTest` 裡的玩家是假的（`FakePlayerController`，欄位跟 A 的一樣）。
+> 換成真的玩家時：刪掉假玩家，把 HUD 上 `PlayerHealthDisplay` 的 **Component Name** 改回 `PlayerController`，
+> **Player** 欄位留空（會自動找 Tag 是 Player 的物件）或拖入真的玩家。
 
 想看全部接好的樣子：打開 `Assets/Scenes/E_ShopTest.unity` 按 Play。
 需要重建這個場景：上方選單 **Tools → 組員E → 建立商店測試場景**。

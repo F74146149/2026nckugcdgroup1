@@ -213,7 +213,12 @@ public static class EDemoSceneBuilder
         scaler.matchWidthOrHeight = 0.5f;
         Transform canvas = canvasGO.transform;
 
-        HealthUI healthUI = BuildHud(canvas);
+        // ---- 假玩家：欄位跟組員 A 的 PlayerController 一樣 ----
+        var playerGO = new GameObject("Player (假的 PlayerController)");
+        playerGO.tag = "Player";
+        playerGO.AddComponent<FakePlayerController>();
+
+        BuildHud(canvas, playerGO);
         BuildShop(canvas, shop);
         BuildResultScreen(canvas);
 
@@ -221,8 +226,6 @@ public static class EDemoSceneBuilder
         var testers = new GameObject("Testers (測試用)");
         testers.AddComponent<CurrencyTester>();
         testers.AddComponent<ShopTester>();
-        DemoPlayerHealth demo = testers.AddComponent<DemoPlayerHealth>();
-        Set(demo, "healthUI", healthUI);
 
         EnsureFolder("Assets/Scenes");
         EditorSceneManager.SaveScene(scene, ScenePath);
@@ -230,8 +233,8 @@ public static class EDemoSceneBuilder
         Debug.Log("組員E：測試場景已建立 → " + ScenePath);
     }
 
-    // ---- HUD：愛心、金幣、能力值、操作提示 ----
-    private static HealthUI BuildHud(Transform canvas)
+    // ---- HUD：一格一格的血量、金幣、能力值、操作提示 ----
+    private static void BuildHud(Transform canvas, GameObject player)
     {
         RectTransform hud = NewUI("HUD", canvas);
         Stretch(hud);
@@ -253,6 +256,12 @@ public static class EDemoSceneBuilder
         HealthUI healthUI = hud.gameObject.AddComponent<HealthUI>();
         Set(healthUI, "heartTemplate", heart);
 
+        // 連接玩家血量 → 一格一格的血量（HealthUI）
+        PlayerHealthDisplay display = hud.gameObject.AddComponent<PlayerHealthDisplay>();
+        Set(display, "player", player);
+        SetString(display, "componentName", nameof(FakePlayerController));
+        Set(display, "hearts", healthUI);
+
         // 金幣
         TextMeshProUGUI coin = NewText("CoinText", hud, "Gold: 0", 44, TextAlignmentOptions.TopRight, Gold);
         Place(coin.rectTransform, new Vector2(1, 1), new Vector2(1, 1), new Vector2(1, 1), new Vector2(-40, -40), new Vector2(420, 60));
@@ -271,8 +280,6 @@ public static class EDemoSceneBuilder
             "[G] +10 Gold    [O] Open Shop    [J] Take Damage    [H] Heal    [K] Game Over    [V] Victory",
             26, TextAlignmentOptions.Bottom, new Color(1f, 1f, 1f, 0.7f));
         Place(hint.rectTransform, new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 30), new Vector2(1800, 60));
-
-        return healthUI;
     }
 
     // ---- 商店 ----
@@ -512,6 +519,19 @@ public static class EDemoSceneBuilder
             return;
         }
         p.objectReferenceValue = value;
+        so.ApplyModifiedPropertiesWithoutUndo();
+    }
+
+    private static void SetString(Object target, string field, string value)
+    {
+        var so = new SerializedObject(target);
+        SerializedProperty p = so.FindProperty(field);
+        if (p == null)
+        {
+            Debug.LogError("組員E 工具：" + target.GetType().Name + " 找不到欄位 " + field);
+            return;
+        }
+        p.stringValue = value;
         so.ApplyModifiedPropertiesWithoutUndo();
     }
 
