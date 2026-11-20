@@ -37,7 +37,15 @@ public class CurrencyTester : MonoBehaviour
 
         if (keyboard.lKey.wasPressedThisFrame)
         {
-            currency.LootMultiplier += 0.5f;
+            if (PlayerStats.Instance != null)
+            {
+                // 有 PlayerStats 時，掠奪由它計算，所以加在它身上
+                PlayerStats.Instance.AddModifier(this, new StatModifier(StatType.Loot, ModifierKind.Flat, 0.5f));
+            }
+            else
+            {
+                currency.LootMultiplier += 0.5f;
+            }
             Debug.Log("掠奪加成變成 x" + currency.LootMultiplier);
         }
 

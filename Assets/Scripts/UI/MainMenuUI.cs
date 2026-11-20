@@ -38,6 +38,8 @@ public class MainMenuUI : MonoBehaviour
             return;
         }
 
+        // 新的一局：金幣、被動能力歸零
+        RunReset.ResetAll();
         SceneManager.LoadScene(gameSceneName);
     }
 

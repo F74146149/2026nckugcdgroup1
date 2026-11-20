@@ -78,7 +78,8 @@ public class CurrencyManager : MonoBehaviour
     {
         if (amount <= 0) return 0;
 
-        int gained = applyLoot ? Mathf.RoundToInt(amount * lootMultiplier) : amount;
+        // 四捨五入（Mathf.RoundToInt 遇到 .5 會取偶數，12.5 會變 12，所以自己寫）
+        int gained = applyLoot ? Mathf.FloorToInt(amount * lootMultiplier + 0.5f) : amount;
         Gold += gained;
         OnGoldChanged?.Invoke(Gold);
         return gained;
