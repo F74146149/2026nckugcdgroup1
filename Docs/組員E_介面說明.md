@@ -44,15 +44,37 @@ rb.linearVelocity = movement * speed;
 
 ### 算傷害（含攻擊力加成與爆擊）
 
+打到敵人時，把武器傷害丟進 `DamageCalculator.Calculate(...)`，它會回傳套用 Buff 之後的傷害。
+**每把武器只要改「打到敵人」那一行**，`CurrentDamage` 本身不用動，它還是代表武器原本的傷害。
+
+`WeaponHitBox.cs`（刀）：
+
 ```csharp
-int damage = weaponData.damage;
-bool isCrit = false;
-if (PlayerStats.Instance != null)
-{
-    damage = PlayerStats.Instance.RollDamage(weaponData.damage, out isCrit);
-}
+// 原本
+enemy.TakeDamage_E(weaponController.CurrentDamage);
+// 改成
+enemy.TakeDamage_E(DamageCalculator.Calculate(weaponController.CurrentDamage));
+```
+
+`ProjectilContoller.cs`（子彈）：
+
+```csharp
+// 原本
 enemy.TakeDamage_E(damage);
-// isCrit 可以拿來播爆擊特效
+// 改成
+enemy.TakeDamage_E(DamageCalculator.Calculate(damage));
+```
+
+計算方式：`最終傷害 = 武器傷害 × 攻擊力倍率`，爆擊時再 × 2（爆擊率預設 5%）。
+每打中一隻敵人各自擲一次爆擊，所以一刀砍到三隻，可能只有其中一隻爆擊。
+場景裡沒有 `PlayerStats` 時會直接回傳原本的傷害，不會報錯。
+
+想知道有沒有爆擊（例如要播爆擊特效）：
+
+```csharp
+float damage = DamageCalculator.Calculate(weaponController.CurrentDamage, out bool isCrit);
+enemy.TakeDamage_E(damage);
+if (isCrit) { /* 播爆擊特效 */ }
 ```
 
 ---

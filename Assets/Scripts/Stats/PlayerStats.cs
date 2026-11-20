@@ -11,7 +11,8 @@ using UnityEngine;
 ///   PlayerStats.Instance.MoveSpeed         // float，移動速度
 ///   PlayerStats.Instance.AttackMultiplier  // float，傷害倍率（1 = 100%）
 ///   PlayerStats.Instance.CritChance        // float，0 ~ 1
-///   PlayerStats.Instance.RollDamage(10, out bool isCrit)  // 算出這一擊的傷害（含攻擊力與爆擊）
+///
+/// 算攻擊傷害請用 DamageCalculator.Calculate(武器傷害)（含攻擊力加成與爆擊）。
 ///
 /// 數值改變時會發出 OnStatsChanged，例如買到加血能力時，A 可以讓玩家的血量上限跟著變。
 ///
@@ -163,20 +164,6 @@ public class PlayerStats : MonoBehaviour
         if (modifiers.Count == 0) return;
         modifiers.Clear();
         NotifyChanged();
-    }
-
-    /// <summary>
-    /// 算出一次攻擊的傷害：武器基礎傷害 × 攻擊力，並擲骰判斷爆擊。
-    /// 給組員 B 用：int dmg = PlayerStats.Instance.RollDamage(weaponDamage, out bool isCrit);
-    /// </summary>
-    public int RollDamage(int baseDamage, out bool isCrit)
-    {
-        float damage = baseDamage * AttackMultiplier;
-
-        isCrit = UnityEngine.Random.value < CritChance;
-        if (isCrit) damage *= critDamageMultiplier;
-
-        return Mathf.Max(1, Mathf.RoundToInt(damage));
     }
 
     private void NotifyChanged()
