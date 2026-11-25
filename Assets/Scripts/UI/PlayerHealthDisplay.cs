@@ -49,6 +49,8 @@ public class PlayerHealthDisplay : MonoBehaviour
     [SerializeField] private bool syncMaxHealthFromStats = true;
     [Tooltip("血量歸零時打開失敗畫面")]
     [SerializeField] private bool showGameOverOnDeath = true;
+    [Tooltip("被打到時玩家閃紅色（打擊特效）")]
+    [SerializeField] private bool flashOnDamage = true;
 
     // 找到的 A 的程式與欄位
     private Component target;
@@ -116,9 +118,13 @@ public class PlayerHealthDisplay : MonoBehaviour
         if (current != shownCurrent || max != shownMax)
         {
             bool justDied = shownCurrent > 0 && current <= 0;
+            // 血量變少、上限沒變 = 被打到（上限變少造成的扣血不算）
+            bool tookDamage = shownCurrent > 0 && current < shownCurrent && max == shownMax;
             shownCurrent = current;
             shownMax = max;
             RefreshDisplay();
+
+            if (tookDamage && flashOnDamage) HitEffects.PlayerHit(target.gameObject);
 
             if (justDied && showGameOverOnDeath && GameResultUI.Instance != null)
             {

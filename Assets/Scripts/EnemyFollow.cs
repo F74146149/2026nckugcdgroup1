@@ -15,6 +15,8 @@ public class EnemyFollow : MonoBehaviour
     public float attackRange = 1f;
     public float windupTime = 0.4f;
     public float attackCooldown = 1f;
+    [Tooltip("打中玩家扣幾滴血")]
+    public int attackDamage = 1;
 
     private bool isAttacking;
     private float nextAttackTime;
@@ -74,7 +76,7 @@ public class EnemyFollow : MonoBehaviour
                 else
                 {
                     float step = Mathf.Min(
-                        speed * Time.fixedDeltaTime,
+                        speed * SlowZone.MultiplierFor(rb) * Time.fixedDeltaTime, // 在水裡會變慢
                         distance - attackRange
                     );
 
@@ -100,7 +102,7 @@ public class EnemyFollow : MonoBehaviour
         }
 
         rb.MovePosition(Vector2.MoveTowards(
-        rb.position, wanderTarget, wanderSpeed * Time.fixedDeltaTime
+        rb.position, wanderTarget, wanderSpeed * SlowZone.MultiplierFor(rb) * Time.fixedDeltaTime
         ));
 
         if (Vector2.Distance(transform.position, wanderTarget) < 0.01f)
@@ -147,6 +149,10 @@ public class EnemyFollow : MonoBehaviour
         Physics2D.Linecast(rb.position, player.position, wallLayers).collider == null)
         {
             Debug.Log("命中玩家");
+
+            // 真的扣玩家的血
+            PlayerController target = player.GetComponent<PlayerController>();
+            if (target != null) target.TakeDamage_P(attackDamage);
         }
         else
         {

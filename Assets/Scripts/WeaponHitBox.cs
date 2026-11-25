@@ -19,7 +19,6 @@ public class WeaponHitBox : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("碰撞到Enemy");
         Enemycontroller enemy = other.GetComponent<Enemycontroller>();
 
         // 不是揮刀期間，就不造成擊退
@@ -34,8 +33,12 @@ public class WeaponHitBox : MonoBehaviour
 
             Debug.Log("取得EnemyController");
             enemy.Knockback();
-            enemy.TakeDamage_E(weaponController.CurrentDamage);
-            
+
+            // 套用被動能力（攻擊力、爆擊）後的傷害（組員 E 的 DamageCalculator）
+            float damage = DamageCalculator.Calculate(weaponController.CurrentDamage, out bool isCrit);
+            enemy.TakeDamage_E(damage);
+            HitEffects.EnemyHit(enemy.gameObject, damage, isCrit);
+
         }
     }
 

@@ -10,7 +10,22 @@ public class PlayerController : MonoBehaviour
     public float PlayerSpeed = 5f;
     public int maxHealth = 3;
     public int PlayercurrentHealth = 3;
-    
+
+    // 實際移動速度 = PlayerSpeed × 移動速度被動加成（組員 E 的 PlayerStats）× 地形（水會變慢）
+    public float CurrentSpeed
+    {
+        get
+        {
+            float speed = PlayerSpeed;
+            if (PlayerStats.Instance != null)
+            {
+                float baseSpeed = PlayerStats.Instance.GetBase(StatType.MoveSpeed);
+                if (baseSpeed > 0f) speed *= PlayerStats.Instance.MoveSpeed / baseSpeed;
+            }
+            return speed * SlowZone.MultiplierFor(rb);
+        }
+    }
+
     //角色受傷參考
     public void TakeDamage_P(int damage)
     {
@@ -49,7 +64,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //利用物理引擎線性移動
-        rb.linearVelocity = movement * PlayerSpeed;
+        rb.linearVelocity = movement * CurrentSpeed;
 
         
     }

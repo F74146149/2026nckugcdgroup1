@@ -29,14 +29,10 @@ E 的 `PlayerHealthDisplay` 會直接讀 `PlayerController` 現在的兩個欄�
 2. 玩家物件的 Tag 要是 **Player**（EnemyController 本來就靠這個 Tag 判斷）。
 3. **不要另外接 `PlayerHealing`**，不然補血會補兩次。
 
-### 移動速度（可選）
+### 移動速度：已經接好（integration）
 
-想讓「移動速度」被動能力生效的話：
-
-```csharp
-float speed = PlayerStats.Instance != null ? PlayerStats.Instance.MoveSpeed : PlayerSpeed;
-rb.linearVelocity = movement * speed;
-```
+`PlayerController.CurrentSpeed` = `PlayerSpeed` × 移動速度被動加成 × 地形（站在水裡 × 0.5）。
+A 調 `PlayerSpeed` 就是調基本速度，被動能力會照比例加上去。
 
 ---
 
@@ -44,54 +40,40 @@ rb.linearVelocity = movement * speed;
 
 ### 算傷害（含攻擊力加成與爆擊）
 
-打到敵人時，把武器傷害丟進 `DamageCalculator.Calculate(...)`，它會回傳套用 Buff 之後的傷害。
-**每把武器只要改「打到敵人」那一行**，`CurrentDamage` 本身不用動，它還是代表武器原本的傷害。
-
-`WeaponHitBox.cs`（刀）：
+**已經在 `integration` 接好了**：`WeaponHitBox`（刀）和 `ProjectilContoller`（子彈）打到敵人時都會這樣做：
 
 ```csharp
-// 原本
-enemy.TakeDamage_E(weaponController.CurrentDamage);
-// 改成
-enemy.TakeDamage_E(DamageCalculator.Calculate(weaponController.CurrentDamage));
-```
-
-`ProjectilContoller.cs`（子彈）：
-
-```csharp
-// 原本
+float damage = DamageCalculator.Calculate(武器傷害, out bool isCrit); // 套用攻擊力、爆擊
 enemy.TakeDamage_E(damage);
-// 改成
-enemy.TakeDamage_E(DamageCalculator.Calculate(damage));
+HitEffects.EnemyHit(enemy.gameObject, damage, isCrit);              // 閃一下 + 跳傷害數字
 ```
+
+`CurrentDamage` 本身沒動，它還是代表武器原本的傷害。**之後新增武器，打到敵人時也照這三行寫。**
 
 計算方式：`最終傷害 = 武器傷害 × 攻擊力倍率`，爆擊時再 × 2（爆擊率預設 5%）。
 每打中一隻敵人各自擲一次爆擊，所以一刀砍到三隻，可能只有其中一隻爆擊。
 場景裡沒有 `PlayerStats` 時會直接回傳原本的傷害，不會報錯。
 
-想知道有沒有爆擊（例如要播爆擊特效）：
-
-```csharp
-float damage = DamageCalculator.Calculate(weaponController.CurrentDamage, out bool isCrit);
-enemy.TakeDamage_E(damage);
-if (isCrit) { /* 播爆擊特效 */ }
-```
+子彈碰到 Tag 是 `Wall` 的東西會消失：D 的牆和石頭已經改成 `Wall`，水不會擋子彈。
 
 ---
 
 ## 組員 C（敵人）
 
-### 敵人死亡時給金幣
+### 已經在 `integration` 接好的
 
-```csharp
-[SerializeField] private int goldDrop = 5;
+- `Enemycontroller` 死掉會掉 **Gold Drop**（預設 5）枚金幣，會自動套用掠奪加成；同一幀被打兩次也只會死一次。
+- 用程式生出來的敵人會自己用 Tag 找玩家。
+- 在水裡移動速度 × 0.5（`EnemyFollow` 也是）。
+- `EnemyFollow` 打中玩家會真的扣血（**Attack Damage**，預設 1）。
 
-private void Die()
-{
-    if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddGold(goldDrop); // 會自動套用掠奪加成
-    // ...原本的死亡程式
-}
-```
+**還要 C 決定的**：正式的敵人要用 `Enemycontroller` 還是 `EnemyFollow`。
+`EnemyFollow` 目前沒有血量，武器打不死它；要用它的話，請把它跟 `Enemycontroller` 合成一支，
+或是讓同一個敵人身上兩支都放（`Enemycontroller` 管血量和死亡，`EnemyFollow` 管移動和攻擊，
+這時候要把 `Enemycontroller` 的移動關掉）。
+
+自己做新的地形也可以讓人變慢：Collider2D 勾 **Is Trigger**，再加上 `SlowZone` 元件，
+移動程式把速度乘上 `SlowZone.MultiplierFor(rb)`。
 
 ---
 
@@ -106,6 +88,7 @@ private void Die()
 | `GameManager` | 整局流程：開局、開商店、換房間、勝利 | Rooms To Win（幾間算贏）、Price Increase Per Room（每間商品貴多少） |
 | `WaveManager` | 一波清完才生下一波；敵人放在它底下，用「還剩幾隻」判斷打完沒 | Enemy Prefabs、Waves、Time Between Waves、Max Enemies Per Wave、Safe Radius |
 | `RoomManager` | 生成地圖；換房間時會先清掉舊地圖 | 地板、牆、石頭、水的 prefab |
+| `water.prefab` | 水可以走過去，但在裡面速度 × 0.5（`SlowZone`） | SlowZone 的 Speed Multiplier |
 | `EnemyCountManager` | 只記數量，**不再暫停遊戲** | |
 
 想在畫面上顯示「Room 1 / 3」「Wave 2 / 3」可以監聽：

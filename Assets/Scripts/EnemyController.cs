@@ -21,11 +21,15 @@ public class Enemycontroller : MonoBehaviour
     //可調整基本數值
     public float currentHealth = 3;
     public int contactDamage = 1;
+    [Tooltip("死掉時掉幾枚金幣（會自動套用掠奪加成）")]
+    public int goldDrop = 5;
 
-
+    private bool isDead; // 避免同一幀被打兩次、死兩次（金幣拿兩次）
 
     public void TakeDamage_E(float damage)
     {
+        if (isDead) return;
+
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -78,7 +82,7 @@ public class Enemycontroller : MonoBehaviour
             direction = direction.normalized;
         }
 
-        rb.linearVelocity = direction * EnemySpeed;
+        rb.linearVelocity = direction * EnemySpeed * SlowZone.MultiplierFor(rb); // 在水裡會變慢
 
         currentDirection = direction;
     }
@@ -107,7 +111,12 @@ public class Enemycontroller : MonoBehaviour
 
     private void Die()
     {
-        gameManager.EnemyDefeated();
+        isDead = true;
+        if (gameManager != null) gameManager.EnemyDefeated();
+
+        // 掉金幣（組員 E 的 CurrencyManager）
+        if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddGold(goldDrop);
+
         Destroy(gameObject);
     }
 
