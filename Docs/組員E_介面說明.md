@@ -97,31 +97,22 @@ private void Die()
 
 ## 組員 D（關卡流程）
 
-### 打完房間 → 打開商店 → 玩家按繼續 → 下一關
+**已經在 `integration` branch 接好了**，D 之後請從 integration 繼續改（先把 integration merge 進 D）。
+
+流程：進場景 → 第 1 間房間 → 一波一波生敵人 → 全部打完 → 商店 → 按 Continue → 下一間房間 → 打完最後一間 → 勝利畫面
+
+| 程式 | 做什麼 | Inspector 可以調的 |
+|---|---|---|
+| `GameManager` | 整局流程：開局、開商店、換房間、勝利 | Rooms To Win（幾間算贏）、Price Increase Per Room（每間商品貴多少） |
+| `WaveManager` | 一波清完才生下一波；敵人放在它底下，用「還剩幾隻」判斷打完沒 | Enemy Prefabs、Waves、Time Between Waves、Max Enemies Per Wave、Safe Radius |
+| `RoomManager` | 生成地圖；換房間時會先清掉舊地圖 | 地板、牆、石頭、水的 prefab |
+| `EnemyCountManager` | 只記數量，**不再暫停遊戲** | |
+
+想在畫面上顯示「Room 1 / 3」「Wave 2 / 3」可以監聽：
 
 ```csharp
-void Start()
-{
-    if (ShopManager.Instance != null) ShopManager.Instance.OnShopClosed += GoToNextLevel;
-}
-
-void OnRoomCleared()
-{
-    if (ShopManager.Instance != null) ShopManager.Instance.OpenShop();
-    else GoToNextLevel();
-}
-```
-
-### 樓層越深，商品越貴（可選）
-
-```csharp
-ShopManager.Instance.PriceMultiplier = 1f + floor * 0.25f;
-```
-
-### 打完最後一層
-
-```csharp
-if (GameResultUI.Instance != null) GameResultUI.Instance.ShowVictory();
+gameManager.OnRoomStarted += (room, total) => { /* 更新文字 */ };
+waveManager.OnWaveStarted += (wave, total) => { /* 更新文字 */ };
 ```
 
 ---

@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5561e00effca3f4c8c89a4b377df8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  enemyPrefabs: []
+  enemyPrefabs:
+  - {fileID: 945129303655287373, guid: 8529820fbd0b11749aab5304cb8487f7, type: 3}
   roomManager: {fileID: 0}
-  spawning: 0

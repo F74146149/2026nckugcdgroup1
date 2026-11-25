@@ -25,12 +25,16 @@ public class RoomManager : MonoBehaviour
             return;
         }
 
+        // 進下一間房間時，先把上一張地圖清掉
+        ClearMap();
+
         float startX = -(map_width - 1) / 2f;
         float startY = -(map_height - 1) / 2f;
         GameObject[,] terrain = new GameObject[map_width, map_height];
         enemySpawnPoints.Clear();
         PlaceClusters(terrain, rock, Random.Range(2, 4), true);
-        PlaceClusters(terrain, water, Random.Range(2, 4));
+        // 水也避開正中間，不然玩家一出生可能卡在水裡
+        PlaceClusters(terrain, water, Random.Range(2, 4), true);
 
         for (int x = 0; x < map_width; x++)
         {
@@ -62,6 +66,15 @@ public class RoomManager : MonoBehaviour
     public Vector3[] GetEnemySpawnPoints()
     {
         return enemySpawnPoints.ToArray();
+    }
+
+    /// <summary>刪掉目前的地圖</summary>
+    public void ClearMap()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     void PlaceClusters(GameObject[,] terrain, GameObject prefab, int clusterCount, bool avoidOrigin = false)

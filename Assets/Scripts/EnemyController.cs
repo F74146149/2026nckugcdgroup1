@@ -41,6 +41,13 @@ public class Enemycontroller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gameManager = FindFirstObjectByType<EnemyCountManager>();
         //敵人數量調整(目前只能指定固定數量，請寫程式改成"隨機數量皆可"，也請配合GameManager)
+
+        // 用程式生出來的敵人沒辦法在 Inspector 拖玩家，所以自己用 Tag 找
+        if (player == null)
+        {
+            GameObject target = GameObject.FindWithTag("Player");
+            if (target != null) player = target.transform;
+        }
     }
 
 
@@ -60,6 +67,9 @@ public class Enemycontroller : MonoBehaviour
 
             return;//擊退期間不可貼近玩家，因而打斷下面程式
         }
+
+        if (player == null) return; // 找不到玩家就先不動
+
         //計算敵人到玩家的方向向量，用Speed的數值調整擊退距離
         Vector2 direction = (Vector2)player.position - rb.position;
 
