@@ -26,7 +26,7 @@ public class DamagePopup : MonoBehaviour
         go.transform.position = position;
 
         TextMeshPro tmp = go.AddComponent<TextMeshPro>();
-        tmp.text = FormatDamage(damage) + (isCrit ? "!" : "");
+        tmp.text = FormatDamage(damage);
         tmp.fontSize = isCrit ? 6f : 4.5f;
         tmp.fontStyle = FontStyles.Bold;
         tmp.alignment = TextAlignmentOptions.Center;

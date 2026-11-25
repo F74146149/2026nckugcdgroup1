@@ -33,3 +33,4 @@ MonoBehaviour:
     endAngle: 50
   comboResetDuration: 0.5
   comboInputWindow: 0.15
+  weaponLength: 1.5

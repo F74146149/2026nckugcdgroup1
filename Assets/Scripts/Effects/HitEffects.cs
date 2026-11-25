@@ -4,24 +4,23 @@ using UnityEngine;
 /// 打擊特效（組員 E）。
 ///
 ///   HitEffects.EnemyHit(敵人, 傷害, 是否爆擊)
-///     → 敵人閃一下顏色 + 頭上跳出傷害數字（爆擊是黃色大字，後面加「!」）
+///     → 敵人一瞬間變白 + 頭上跳出傷害數字（爆擊是黃色、比較大）
 ///     WeaponHitBox、ProjectilContoller 打中敵人時已經會呼叫
 ///
 ///   HitEffects.PlayerHit(玩家)
-///     → 玩家閃紅色幾下
+///     → 玩家閃紅色（大約閃到無敵時間結束）
 ///     PlayerHealthDisplay 發現血量變少時已經會呼叫
 /// </summary>
 public static class HitEffects
 {
-    public static Color EnemyFlashColor = new Color(1f, 0.35f, 0.35f);
-    public static Color CritFlashColor = new Color(1f, 0.85f, 0.2f);
+    public static float EnemyWhiteTime = 0.08f;
     public static Color PlayerFlashColor = new Color(1f, 0.25f, 0.25f);
 
     public static void EnemyHit(GameObject enemy, float damage, bool isCrit)
     {
         if (enemy == null) return;
 
-        HitFlash.Flash(enemy, isCrit ? CritFlashColor : EnemyFlashColor, 0.1f, 1);
+        HitFlash.FlashWhite(enemy, EnemyWhiteTime);
         DamagePopup.Spawn(enemy.transform.position + Vector3.up * 0.6f, damage, isCrit);
     }
 
@@ -29,6 +28,7 @@ public static class HitEffects
     {
         if (player == null) return;
 
-        HitFlash.Flash(player, PlayerFlashColor, 0.08f, 3);
+        // 0.08 秒一亮一暗，閃 6 下 ≈ 0.9 秒，跟玩家 1 秒的無敵時間差不多
+        HitFlash.Flash(player, PlayerFlashColor, 0.08f, 6);
     }
 }

@@ -110,7 +110,7 @@ MonoBehaviour:
   Speed: 7
   knockback: 5
   currentHealth: 100
-  contactDamage: 20
+  contactDamage: 1
 --- !u!61 &1925974204611705933
 BoxCollider2D:
   m_ObjectHideFlags: 0

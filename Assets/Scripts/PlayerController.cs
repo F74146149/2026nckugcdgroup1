@@ -26,9 +26,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    [Tooltip("被打到之後幾秒內不會再受傷（無敵時間）")]
+    public float invincibleTime = 1f;
+    private float invincibleUntil;
+
+    /// <summary>現在是不是無敵時間</summary>
+    public bool IsInvincible => Time.time < invincibleUntil;
+
     //角色受傷參考
     public void TakeDamage_P(int damage)
     {
+        // 已經死了、或剛被打過還在無敵時間，就不扣血
+        // （避免被一群敵人同時碰到，一瞬間扣光）
+        if (damage <= 0 || PlayercurrentHealth <= 0 || IsInvincible) return;
+        invincibleUntil = Time.time + invincibleTime;
+
         PlayercurrentHealth -= damage;
 
         if (PlayercurrentHealth <= 0)

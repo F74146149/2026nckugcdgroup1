@@ -29,6 +29,14 @@ E 的 `PlayerHealthDisplay` 會直接讀 `PlayerController` 現在的兩個欄�
 2. 玩家物件的 Tag 要是 **Player**（EnemyController 本來就靠這個 Tag 判斷）。
 3. **不要另外接 `PlayerHealing`**，不然補血會補兩次。
 
+### 血量是「格」，不是 100 滴
+
+玩家的血量上限由 E 的 `PlayerStats` 決定（基礎 **3 格**，買被動可以加），進遊戲時會覆蓋 Prefab 上的 100。
+所以**敵人的傷害要用「格」來算**：`contactDamage = 1` 就是扣一格。
+
+被打到之後有 **1 秒無敵時間**（`PlayerController.invincibleTime`），期間玩家會閃紅色，
+這樣被一群敵人同時碰到也不會一瞬間扣光。
+
 ### 移動速度：已經接好（integration）
 
 `PlayerController.CurrentSpeed` = `PlayerSpeed` × 移動速度被動加成 × 地形（站在水裡 × 0.5）。
@@ -45,7 +53,7 @@ A 調 `PlayerSpeed` 就是調基本速度，被動能力會照比例加上去。
 ```csharp
 float damage = DamageCalculator.Calculate(武器傷害, out bool isCrit); // 套用攻擊力、爆擊
 enemy.TakeDamage_E(damage);
-HitEffects.EnemyHit(enemy.gameObject, damage, isCrit);              // 閃一下 + 跳傷害數字
+HitEffects.EnemyHit(enemy.gameObject, damage, isCrit);              // 敵人瞬間變白 + 跳傷害數字
 ```
 
 `CurrentDamage` 本身沒動，它還是代表武器原本的傷害。**之後新增武器，打到敵人時也照這三行寫。**
@@ -55,6 +63,17 @@ HitEffects.EnemyHit(enemy.gameObject, damage, isCrit);              // 閃一下
 場景裡沒有 `PlayerStats` 時會直接回傳原本的傷害，不會報錯。
 
 子彈碰到 Tag 是 `Wall` 的東西會消失：D 的牆和石頭已經改成 `Wall`，水不會擋子彈。
+
+### 武器圖片 = 攻擊範圍
+
+換武器時，`WeaponHitBox` 會自動：
+
+1. 把圖片縮放成 WeaponData 的 **Weapon Length**（Unity 單位；匕首 1.5、斧頭 1.9、劍 2.2）
+2. 刀柄放在離玩家中心 0.35 的地方
+3. 攻擊範圍改成**圖片的形狀**（照圖片透明度描出來的外框），原本的方形 Collider 會關掉
+
+所以畫面上刀砍到哪裡，就打得到哪裡。新武器的圖片請做成**橫的、刀柄在左邊**，背景要透明。
+想讓某把武器攻擊範圍大一點，就把它的 Weapon Length 調大。
 
 ---
 
