@@ -26,7 +26,10 @@ public class ProjectilContoller : MonoBehaviour
 
         if (enemy != null)
         {
-            enemy.TakeDamage_E(damage);
+            // 套用被動能力（攻擊力、爆擊）後的傷害（組員 E 的 DamageCalculator）
+            float dealt = DamageCalculator.Calculate(damage, out bool isCrit);
+            enemy.TakeDamage_E(dealt);
+            HitEffects.EnemyHit(enemy.gameObject, dealt, isCrit);
 
             Destroy(gameObject);
         } else if (collision.CompareTag("Wall"))

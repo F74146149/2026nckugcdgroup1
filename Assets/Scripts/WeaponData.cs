@@ -21,7 +21,12 @@ public class WeaponData : ScriptableObject
     [SerializeField]private float comboResetDuration = 0.5f;
     [SerializeField] private float comboInputWindow = 0.15f;
 
+    [Header("Size")]
+    [Tooltip("武器在畫面上的長度（Unity 單位）。圖片會縮放成這個長度，攻擊範圍就是圖片的形狀")]
+    [Min(0.1f)] [SerializeField] private float weaponLength = 2f;
+
     public string WeaponName => weaponName;
+    public float WeaponLength => weaponLength;
     public Sprite WeaponSprite => weaponSprite;
     public float ComboInputWindow => comboInputWindow;
     public AttackData[] ComboAttacks => comboAttacks;

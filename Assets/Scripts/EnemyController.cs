@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public float waitTime = 2f;
 
     [Header("近戰")]
+    public int goldDrop = 5;
     public int contactDamage = 1;
     public float attackRange = 1f;
     public float windupTime = 0.4f;
@@ -155,7 +156,7 @@ public class EnemyController : MonoBehaviour
 
     private void MoveTowards(Vector2 target, float step)
     {
-        Vector2 nextPosition = Vector2.MoveTowards(rb.position, target, step);
+        Vector2 nextPosition = Vector2.MoveTowards(rb.position, target, step * SlowZone.MultiplierFor(rb));
         Vector2 movement = nextPosition - rb.position;
         if (movement.sqrMagnitude > 0f)
             lastMoveDirection = movement.normalized;
@@ -228,6 +229,8 @@ public class EnemyController : MonoBehaviour
         if (gameManager != null)
             gameManager.EnemyDefeated();
 
+        if (CurrencyManager.Instance != null)
+            CurrencyManager.Instance.AddGold(goldDrop);
         Destroy(gameObject);
     }
 

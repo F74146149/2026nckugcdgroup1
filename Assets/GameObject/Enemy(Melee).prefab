@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 367a054f08b4f46418f171464bf61de4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemycontroller
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   player: {fileID: 0}
   EnemySpeed: 2
   detectionRange: 5

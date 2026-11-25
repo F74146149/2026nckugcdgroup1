@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d60bc74ace4bf78a31f53004512e9a, type: 3}
+  m_Name: Passive_GoldenMask
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveData
+  displayName: Golden Mask
+  description: 
+  icon: {fileID: 0}
+  price: 30
+  rarity: 1
+  maxStacks: 0
+  modifiers:
+  - stat: 5
+    kind: 0
+    value: 0.25

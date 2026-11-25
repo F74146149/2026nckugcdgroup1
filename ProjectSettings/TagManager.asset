@@ -4,6 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - 'Enemy '
+  - Surrounding
+  - Bullet
+  - Weapon
+  - Wall
   - Enemy
   - Wall
   layers:
@@ -18,16 +23,16 @@ TagManager:
   - Wall
   - EnemyAttack
   - 
+  - 'Floor '
+  - 'Water '
+  - Obstacle
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Weapon
+  - Bullet
   - 
   - 
   - 
