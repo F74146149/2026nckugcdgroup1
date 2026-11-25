@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private RoomManager roomManager;
     private int waves=3; 
     public bool spawning=false;
@@ -15,9 +15,27 @@ public class WaveManager : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        if (enemy == null || roomManager == null)
+        if (roomManager == null)
         {
-            Debug.LogError("Assign the enemy prefab and RoomManager in the Inspector.", this);
+            Debug.LogError("Assign the RoomManager in the Inspector.", this);
+            return;
+        }
+
+        List<GameObject> validEnemyPrefabs = new List<GameObject>();
+        if (enemyPrefabs != null)
+        {
+            foreach (GameObject enemyPrefab in enemyPrefabs)
+            {
+                if (enemyPrefab != null)
+                {
+                    validEnemyPrefabs.Add(enemyPrefab);
+                }
+            }
+        }
+
+        if (validEnemyPrefabs.Count == 0)
+        {
+            Debug.LogError("Assign at least one enemy prefab in the Inspector.", this);
             return;
         }
 
@@ -43,7 +61,8 @@ public class WaveManager : MonoBehaviour
             int spawnPointIndex = Random.Range(0, availableSpawnPoints.Count);
             Vector3 position = availableSpawnPoints[spawnPointIndex];
             availableSpawnPoints.RemoveAt(spawnPointIndex);
-            Instantiate(enemy, position, Quaternion.identity, transform);
+            GameObject enemyPrefab = validEnemyPrefabs[Random.Range(0, validEnemyPrefabs.Count)];
+            Instantiate(enemyPrefab, position, Quaternion.identity, transform);
         }
     }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7366579597732695636}
   - component: {fileID: 8300713130675026378}
   m_Layer: 17
-  m_Name: Circle
+  m_Name: spawntestenemy
   m_TagString: 'Enemy '
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
