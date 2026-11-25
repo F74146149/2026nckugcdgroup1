@@ -6,6 +6,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private RoomManager roomManager;
     private int waves=3; 
+    public bool spawning=false;
 
     // Update is called once per frame
     void Update()
@@ -48,6 +49,7 @@ public class WaveManager : MonoBehaviour
 
     public void countwaves()
     {
+        spawning=true;
         for(int i=0;i<waves;i++)
         {
             if (gameObject.transform.childCount == 0)
@@ -55,5 +57,6 @@ public class WaveManager : MonoBehaviour
                 SpawnEnemy();
             }
         }
+        spawning=false;
     }
 }
