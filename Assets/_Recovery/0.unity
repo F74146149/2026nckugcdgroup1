@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 206298906}
   - component: {fileID: 206298908}
   - component: {fileID: 206298907}
+  - component: {fileID: 206298909}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -357,7 +358,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206298903}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b540e4f16d534049955078f52b16569, type: 3}
   m_Name: 
@@ -386,7 +387,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -436,6 +437,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &206298909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206298903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850540d69dc5dbc4db89764113747120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  PlayerSpeed: 5
+  maxHealth: 3
+  PlayercurrentHealth: 3
 --- !u!1 &720716848
 GameObject:
   m_ObjectHideFlags: 0

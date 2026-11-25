@@ -146,7 +146,14 @@ public class EnemyFollow : MonoBehaviour
         Vector2.Distance(rb.position, player.position) <= attackRange &&
         Physics2D.Linecast(rb.position, player.position, wallLayers).collider == null)
         {
-            Debug.Log("命中玩家");
+            if (player.TryGetComponent<PlayerController>(out var controller))
+            {
+                controller.TakeDamage_P(1);
+            }
+            else
+            {
+                Debug.LogWarning("Player 物件沒有掛上 PlayerController");
+            }
         }
         else
         {

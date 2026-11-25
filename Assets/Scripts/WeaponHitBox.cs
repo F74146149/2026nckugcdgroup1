@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class WeaponHitBox : MonoBehaviour
 {
     private SwordController weaponController;
-    private HashSet<Enemycontroller> hitEnemies = new HashSet<Enemycontroller>();
+    private HashSet<EnemyController> hitEnemies = new HashSet<EnemyController>();
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class WeaponHitBox : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("碰撞到Enemy");
-        Enemycontroller enemy = other.GetComponent<Enemycontroller>();
+        EnemyController enemy = other.GetComponent<EnemyController>();
 
         // 不是揮刀期間，就不造成擊退
         if (!weaponController.IsCurrentlyAttacking)

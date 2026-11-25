@@ -22,7 +22,7 @@ public class ProjectilContoller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemycontroller enemy = collision.GetComponentInParent<Enemycontroller>();
+        EnemyController enemy = collision.GetComponentInParent<EnemyController>();
 
         if (enemy != null)
         {

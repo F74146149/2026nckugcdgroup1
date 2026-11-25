@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     
     //數值參考宣告
     private Rigidbody2D rb;
-    private Enemycontroller enemycontroller;
+    private EnemyController enemycontroller;
     //可調動基本數值
     public float PlayerSpeed = 5f;
     public int maxHealth = 3;
